@@ -1,0 +1,630 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+ABBA_BABA              36              2              2
+all                     1              1              1
+get_popNames            1              1              1
+prepare_bamlist         1              1              1
+prepare_sizefile        1              1              1
+total                  40              1              2
+
+Select jobs to execute...
+
+[Tue Jul 11 13:30:40 2023]
+Job 277:  Prepare list of population names required for the R script calculating D statistic 
+Reason: Updated input files: list/abbababa/4pop_combinations.list
+
+
+    Lines=$(cat list/abbababa/4pop_combinations.list | tail -n +2)
+    path2out=list/abbababa
+    
+    for Line in $Lines; do
+      p1=$(echo $Line | cut -f1 -d',')
+      p2=$(echo $Line | cut -f2 -d',')
+      p3=$(echo $Line | cut -f3 -d',')
+      p4=$(echo $Line | cut -f4 -d',')
+      printf '%s
+' ${p1} ${p2} ${p3} ${p4} > $path2out/${p1}_${p2}_${p3}_${p4}.POPnames.list 2> log/abbababa/4pop_combinations.Popnames.list.log
+    done
+    
+
+[Tue Jul 11 13:30:41 2023]
+Job 239:  Prepare a size file (number of bam/individuals in group) required for the ABBA-BABA test (D-statistic) 
+Reason: Updated input files: list/abbababa/4pop_combinations.list
+
+
+    Lines=$(cat list/abbababa/4pop_combinations.list | tail -n +2)
+    path2in=list/saf
+    path2out=list/abbababa
+    
+    for Line in $Lines; do
+      p1=$(echo $Line | cut -f1 -d',')
+      p2=$(echo $Line | cut -f2 -d',')
+      p3=$(echo $Line | cut -f3 -d',')
+      p4=$(echo $Line | cut -f4 -d',')
+      echo $p1 $p2 $p3 $p4
+
+      NBR_pop1=$(cat $path2in/${p1}.list | wc -l)
+      NBR_pop2=$(cat $path2in/${p2}.list | wc -l)
+      NBR_pop3=$(cat $path2in/${p3}.list | wc -l)
+      NBR_pop4=$(cat $path2in/${p4}.list | wc -l)
+      printf '%s
+' $NBR_pop1 $NBR_pop2 $NBR_pop3 $NBR_pop4 > $path2out/${p1}_${p2}_${p3}_${p4}.sizefile.list
+    done 2> log/abbababa/4pop_combinations.sizefile.log
+    
+
+[Tue Jul 11 13:30:41 2023]
+Job 238:  Prepare list of bam files required for the ABBA-BABA test (D-statistic) 
+Reason: Updated input files: list/abbababa/4pop_combinations.list
+
+
+    Lines=$(cat list/abbababa/4pop_combinations.list | tail -n +2)
+    path2in=list/saf
+    path2out=list/abbababa
+    
+    for Line in $Lines; do
+      p1=$(echo $Line | cut -f1 -d',')
+      p2=$(echo $Line | cut -f2 -d',')
+      p3=$(echo $Line | cut -f3 -d',')
+      p4=$(echo $Line | cut -f4 -d',')
+      echo $p1 $p2 $p3 $p4
+      cat $path2in/${p1}.list $path2in/${p2}.list $path2in/${p3}.list $path2in/${p4}.list > $path2out/${p1}_${p2}_${p3}_${p4}.bam.list 2> log/abbababa/4pop_combinations.bam.list.log
+    done
+    
+Touching output file list/abbababa/4pop_combinations.Popnames.list.done.
+[Tue Jul 11 13:30:41 2023]
+Finished job 277.
+1 of 40 steps (2%) done
+Touching output file list/abbababa/4pop_combinations.bam.list.done.
+[Tue Jul 11 13:30:41 2023]
+Finished job 238.
+2 of 40 steps (5%) done
+Touching output file list/abbababa/4pop_combinations.sizefile.done.
+[Tue Jul 11 13:30:41 2023]
+Finished job 239.
+3 of 40 steps (8%) done
+Select jobs to execute...
+
+[Tue Jul 11 13:30:41 2023]
+Job 245:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF7_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF7_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF7_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF7_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 245 with external jobid 'Submitted batch job 221335'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 274:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF7_galREF9_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF7_galREF9_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF7_galREF9_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_galREF9_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 274 with external jobid 'Submitted batch job 221336'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 267:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 267 with external jobid 'Submitted batch job 221337'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 260:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Missing output files: abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF9_PEL_long_LC_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.done; Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF9_PEL_long_LC_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF9_PEL_long_LC_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF9_PEL_long_LC_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF9_PEL_long_LC_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 260 with external jobid 'Submitted batch job 221338'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 253:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF9_PEL_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF9_PEL_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF9_PEL_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF9_PEL_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 253 with external jobid 'Submitted batch job 221339'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 251:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF9_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF9_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF9_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF9_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 251 with external jobid 'Submitted batch job 221340'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 275:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_cucREF6_longREF7_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_cucREF6_longREF7_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_cucREF6_longREF7_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_cucREF6_longREF7_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 275 with external jobid 'Submitted batch job 221341'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 268:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 268 with external jobid 'Submitted batch job 221342'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 261:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF9_PEL_long_LC_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF9_PEL_long_LC_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF9_PEL_long_LC_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF9_PEL_long_LC_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 261 with external jobid 'Submitted batch job 221343'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 254:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF7_PEL_long_LC_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF7_PEL_long_LC_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF7_PEL_long_LC_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_PEL_long_LC_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 254 with external jobid 'Submitted batch job 221344'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 252:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF9_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF9_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF9_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF9_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 252 with external jobid 'Submitted batch job 221345'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 240:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_PEL_long_LC_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_PEL_long_LC_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_PEL_long_LC_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_PEL_long_LC_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 240 with external jobid 'Submitted batch job 221346'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 269:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 269 with external jobid 'Submitted batch job 221347'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 262:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_longREF7_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_longREF7_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_longREF7_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_longREF7_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 262 with external jobid 'Submitted batch job 221348'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 255:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF7_PEL_long_LC_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF7_PEL_long_LC_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF7_PEL_long_LC_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_PEL_long_LC_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 255 with external jobid 'Submitted batch job 221349'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 246:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF7_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF7_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF7_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF7_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 246 with external jobid 'Submitted batch job 221350'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 241:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_PEL_long_LC_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_PEL_long_LC_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_PEL_long_LC_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_PEL_long_LC_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 241 with external jobid 'Submitted batch job 221351'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 270:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_PRE_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_PRE_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_PRE_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_PRE_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 270 with external jobid 'Submitted batch job 221352'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 263:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_longREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_longREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_longREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_longREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 263 with external jobid 'Submitted batch job 221353'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 256:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF7_PEL_long_LC_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF7_PEL_long_LC_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF7_PEL_long_LC_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_PEL_long_LC_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 256 with external jobid 'Submitted batch job 221354'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 247:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF7_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF7_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF7_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF7_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 247 with external jobid 'Submitted batch job 221355'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 242:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_PEL_long_LC_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_PEL_long_LC_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_PEL_long_LC_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_PEL_long_LC_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 242 with external jobid 'Submitted batch job 221356'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 271:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_PEL_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_PEL_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_PEL_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_PEL_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 271 with external jobid 'Submitted batch job 221357'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 264:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_PRE_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_PRE_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_PRE_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_PRE_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 264 with external jobid 'Submitted batch job 221358'.
+
+[Tue Jul 11 13:30:42 2023]
+Job 257:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Missing output files: abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_PEL_long_LC_cucREF6_curvirostris.abbababa.2500000blocksize.done; Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF7_PEL_long_LC_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF7_PEL_long_LC_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF7_PEL_long_LC_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF7_PEL_long_LC_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 257 with external jobid 'Submitted batch job 221359'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 248:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF7_PEL_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF7_PEL_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF7_PEL_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF7_PEL_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 248 with external jobid 'Submitted batch job 221360'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 243:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_PEL_long_LC_cucREF6_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_PEL_long_LC_cucREF6_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_PEL_long_LC_cucREF6_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_PEL_long_LC_cucREF6_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 243 with external jobid 'Submitted batch job 221361'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 272:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_longREF7_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_longREF7_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_longREF7_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_longREF7_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 272 with external jobid 'Submitted batch job 221362'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 265:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_PEL_long_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_PEL_long_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_PEL_long_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_PEL_long_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 265 with external jobid 'Submitted batch job 221363'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 258:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF9_PEL_long_LC_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF9_PEL_long_LC_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF9_PEL_long_LC_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF9_PEL_long_LC_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 258 with external jobid 'Submitted batch job 221364'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 249:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF9_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF9_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF9_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF9_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 249 with external jobid 'Submitted batch job 221365'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 244:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF7_ALL_gal_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF7_ALL_gal_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF7_ALL_gal_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF7_ALL_gal_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 244 with external jobid 'Submitted batch job 221366'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 273:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/cucREF6_PEL_cuc_LC_longREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/cucREF6_PEL_cuc_LC_longREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_cucREF6_PEL_cuc_LC_longREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/cucREF6_PEL_cuc_LC_longREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 273 with external jobid 'Submitted batch job 221367'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 266:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/galREF9_ALL_gal_LC_PEL_cuc_LC_curvirostris.bam.list)
+    popsize=(list/abbababa/galREF9_ALL_gal_LC_PEL_cuc_LC_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_galREF9_ALL_gal_LC_PEL_cuc_LC_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/galREF9_ALL_gal_LC_PEL_cuc_LC_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 266 with external jobid 'Submitted batch job 221368'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 259:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/longREF9_PEL_long_LC_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/longREF9_PEL_long_LC_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_longREF9_PEL_long_LC_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/longREF9_PEL_long_LC_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 259 with external jobid 'Submitted batch job 221369'.
+
+[Tue Jul 11 13:30:43 2023]
+Job 250:  Compute ABBA-BABA test (D-statistic) in angsd, using a global SNP list and allowing for multiple individuals in each group 
+Reason: Input files updated by another job: list/abbababa/4pop_combinations.bam.list.done, list/abbababa/4pop_combinations.sizefile.done
+
+
+    bamlist=(list/abbababa/PRE_long_LC_longREF9_galREF9_curvirostris.bam.list)
+    popsize=(list/abbababa/PRE_long_LC_longREF9_galREF9_curvirostris.sizefile.list)
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -doAbbababa2 1 -b $bamlist -sizeFile $popsize -useLast 1 -doCounts 1 -out abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/abbababa_PRE_long_LC_longREF9_galREF9_curvirostris.2500000blocksize -blockSize 2500000 -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -rmTrans 0 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/abbababa/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051/PRE_long_LC_longREF9_galREF9_curvirostris.abbababa.2500000blocksize.log
+    
+Submitted job 250 with external jobid 'Submitted batch job 221370'.
+[Tue Jul 11 14:01:42 2023]
+Finished job 251.
+4 of 40 steps (10%) done
+[Tue Jul 11 14:12:43 2023]
+Finished job 275.
+5 of 40 steps (12%) done
+[Tue Jul 11 14:14:09 2023]
+Finished job 260.
+6 of 40 steps (15%) done
+[Tue Jul 11 14:14:50 2023]
+Finished job 274.
+7 of 40 steps (18%) done
+[Tue Jul 11 14:16:18 2023]
+Finished job 252.
+8 of 40 steps (20%) done
+[Tue Jul 11 14:17:33 2023]
+Finished job 245.
+9 of 40 steps (22%) done
+[Tue Jul 11 14:26:02 2023]
+Finished job 253.
+10 of 40 steps (25%) done
+[Tue Jul 11 14:26:04 2023]
+Finished job 261.
+11 of 40 steps (28%) done
+[Tue Jul 11 14:44:05 2023]
+Finished job 246.
+12 of 40 steps (30%) done
+[Tue Jul 11 14:48:51 2023]
+Finished job 269.
+13 of 40 steps (32%) done
+[Tue Jul 11 14:57:41 2023]
+Finished job 270.
+14 of 40 steps (35%) done
+[Tue Jul 11 15:03:20 2023]
+Finished job 255.
+15 of 40 steps (38%) done
+[Tue Jul 11 15:12:09 2023]
+Finished job 241.
+16 of 40 steps (40%) done
+[Tue Jul 11 15:18:05 2023]
+Finished job 247.
+17 of 40 steps (42%) done
+[Tue Jul 11 15:19:07 2023]
+Finished job 256.
+18 of 40 steps (45%) done
+[Tue Jul 11 15:36:39 2023]
+Finished job 242.
+19 of 40 steps (48%) done
+[Tue Jul 11 15:38:38 2023]
+Finished job 257.
+20 of 40 steps (50%) done
+[Tue Jul 11 15:39:33 2023]
+Finished job 271.
+21 of 40 steps (52%) done
+[Tue Jul 11 15:45:29 2023]
+Finished job 272.
+22 of 40 steps (55%) done
+[Tue Jul 11 15:51:33 2023]
+Finished job 243.
+23 of 40 steps (57%) done
+[Tue Jul 11 15:54:03 2023]
+Finished job 248.
+24 of 40 steps (60%) done
+[Tue Jul 11 16:11:21 2023]
+Finished job 273.
+25 of 40 steps (62%) done
+[Tue Jul 11 16:35:35 2023]
+Finished job 250.
+26 of 40 steps (65%) done
+[Tue Jul 11 16:42:56 2023]
+Finished job 259.
+27 of 40 steps (68%) done
+slurmstepd-n025: error: *** JOB 221334 ON n025 CANCELLED AT 2023-07-12T09:44:20 ***

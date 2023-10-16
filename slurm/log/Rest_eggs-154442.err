@@ -1,0 +1,397 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+angsd_ngsRelate_POP       11              2              2
+extract_freq              11              1              1
+total                     23              1              2
+
+Select jobs to execute...
+
+[Thu May  4 15:54:21 2023]
+Job 101:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/longREF7.glf3.done
+
+
+    angsd -b list/saf/longREF7.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/longREF7.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/longREF7.glf3.log
+    
+Submitted job 101 with external jobid 'Submitted batch job 154452'.
+
+[Thu May  4 15:54:22 2023]
+Job 103:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/PEL_cuc_LC.glf3.done
+
+
+    angsd -b list/saf/PEL_cuc_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/PEL_cuc_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/PEL_cuc_LC.glf3.log
+    
+Submitted job 103 with external jobid 'Submitted batch job 154453'.
+
+[Thu May  4 15:54:22 2023]
+Job 96:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/cucREF7.glf3.done
+
+
+    angsd -b list/saf/cucREF7.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/cucREF7.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/cucREF7.glf3.log
+    
+Submitted job 96 with external jobid 'Submitted batch job 154454'.
+
+[Thu May  4 15:54:22 2023]
+Job 105:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/PRE_long_LC.glf3.done
+
+
+    angsd -b list/saf/PRE_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/PRE_long_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/PRE_long_LC.glf3.log
+    
+Submitted job 105 with external jobid 'Submitted batch job 154455'.
+
+[Thu May  4 15:54:22 2023]
+Job 98:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/EGGS_gal_LC.glf3.done
+
+
+    angsd -b list/saf/EGGS_gal_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/EGGS_gal_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/EGGS_gal_LC.glf3.log
+    
+Submitted job 98 with external jobid 'Submitted batch job 154456'.
+
+[Thu May  4 15:54:22 2023]
+Job 100:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/hatched_gal_LC.glf3.done
+
+
+    angsd -b list/saf/hatched_gal_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/hatched_gal_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/hatched_gal_LC.glf3.log
+    
+Submitted job 100 with external jobid 'Submitted batch job 154457'.
+
+[Thu May  4 15:54:22 2023]
+Job 102:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/longREF9.glf3.done
+
+
+    angsd -b list/saf/longREF9.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/longREF9.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/longREF9.glf3.log
+    
+Submitted job 102 with external jobid 'Submitted batch job 154458'.
+
+[Thu May  4 15:54:22 2023]
+Job 95:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/ALL_gal_LC.glf3.done
+
+
+    angsd -b list/saf/ALL_gal_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/ALL_gal_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/ALL_gal_LC.glf3.log
+    
+Submitted job 95 with external jobid 'Submitted batch job 154459'.
+
+[Thu May  4 15:54:22 2023]
+Job 104:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/PEL_long_LC.glf3.done
+
+
+    angsd -b list/saf/PEL_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/PEL_long_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/PEL_long_LC.glf3.log
+    
+Submitted job 104 with external jobid 'Submitted batch job 154460'.
+
+[Thu May  4 15:54:22 2023]
+Job 97:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/curvirostris.glf3.done
+
+
+    angsd -b list/saf/curvirostris.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/curvirostris.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/curvirostris.glf3.log
+    
+Submitted job 97 with external jobid 'Submitted batch job 154461'.
+
+[Thu May  4 15:54:22 2023]
+Job 99:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/galREF9.glf3.done
+
+
+    angsd -b list/saf/galREF9.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/galREF9.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/galREF9.glf3.log
+    
+Submitted job 99 with external jobid 'Submitted batch job 154462'.
+[Thu May  4 16:14:53 2023]
+Finished job 101.
+1 of 23 steps (4%) done
+Select jobs to execute...
+
+[Thu May  4 16:14:53 2023]
+Job 112:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/longREF7.glf3.freq; Input files updated by another job: ngsRelate/longREF7.glf3.done
+
+
+    zcat ngsRelate/longREF7.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/longREF7.glf3.freq 2> log/ngsRelate/longREF7.glf3.freq.log
+    
+Submitted job 112 with external jobid 'Submitted batch job 154731'.
+[Thu May  4 16:15:33 2023]
+Error in rule extract_freq:
+    jobid: 112
+    input: ngsRelate/longREF7.glf3.done
+    output: ngsRelate/longREF7.glf3.freq
+    log: log/ngsRelate/longREF7.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/longREF7.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/longREF7.glf3.freq 2> log/ngsRelate/longREF7.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154731
+
+Error executing rule extract_freq on cluster (jobid: 112, external: Submitted batch job 154731, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.112.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 16:17:09 2023]
+Finished job 103.
+2 of 23 steps (9%) done
+Select jobs to execute...
+
+[Thu May  4 16:17:09 2023]
+Job 114:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/PEL_cuc_LC.glf3.freq; Input files updated by another job: ngsRelate/PEL_cuc_LC.glf3.done
+
+
+    zcat ngsRelate/PEL_cuc_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PEL_cuc_LC.glf3.freq 2> log/ngsRelate/PEL_cuc_LC.glf3.freq.log
+    
+Submitted job 114 with external jobid 'Submitted batch job 154738'.
+[Thu May  4 16:17:28 2023]
+Error in rule extract_freq:
+    jobid: 114
+    input: ngsRelate/PEL_cuc_LC.glf3.done
+    output: ngsRelate/PEL_cuc_LC.glf3.freq
+    log: log/ngsRelate/PEL_cuc_LC.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/PEL_cuc_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PEL_cuc_LC.glf3.freq 2> log/ngsRelate/PEL_cuc_LC.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154738
+
+Error executing rule extract_freq on cluster (jobid: 114, external: Submitted batch job 154738, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.114.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 16:22:17 2023]
+Finished job 96.
+3 of 23 steps (13%) done
+Select jobs to execute...
+
+[Thu May  4 16:22:17 2023]
+Job 107:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/cucREF7.glf3.freq; Input files updated by another job: ngsRelate/cucREF7.glf3.done
+
+
+    zcat ngsRelate/cucREF7.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/cucREF7.glf3.freq 2> log/ngsRelate/cucREF7.glf3.freq.log
+    
+Submitted job 107 with external jobid 'Submitted batch job 154741'.
+[Thu May  4 16:22:35 2023]
+Error in rule extract_freq:
+    jobid: 107
+    input: ngsRelate/cucREF7.glf3.done
+    output: ngsRelate/cucREF7.glf3.freq
+    log: log/ngsRelate/cucREF7.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/cucREF7.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/cucREF7.glf3.freq 2> log/ngsRelate/cucREF7.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154741
+
+Error executing rule extract_freq on cluster (jobid: 107, external: Submitted batch job 154741, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.107.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 16:22:53 2023]
+Finished job 105.
+4 of 23 steps (17%) done
+Select jobs to execute...
+
+[Thu May  4 16:22:53 2023]
+Job 116:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/PRE_long_LC.glf3.freq; Input files updated by another job: ngsRelate/PRE_long_LC.glf3.done
+
+
+    zcat ngsRelate/PRE_long_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PRE_long_LC.glf3.freq 2> log/ngsRelate/PRE_long_LC.glf3.freq.log
+    
+Submitted job 116 with external jobid 'Submitted batch job 154774'.
+[Thu May  4 16:23:27 2023]
+Error in rule extract_freq:
+    jobid: 116
+    input: ngsRelate/PRE_long_LC.glf3.done
+    output: ngsRelate/PRE_long_LC.glf3.freq
+    log: log/ngsRelate/PRE_long_LC.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/PRE_long_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PRE_long_LC.glf3.freq 2> log/ngsRelate/PRE_long_LC.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154774
+
+Error executing rule extract_freq on cluster (jobid: 116, external: Submitted batch job 154774, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.116.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 16:24:37 2023]
+Finished job 97.
+5 of 23 steps (22%) done
+Select jobs to execute...
+
+[Thu May  4 16:24:37 2023]
+Job 108:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/curvirostris.glf3.freq; Input files updated by another job: ngsRelate/curvirostris.glf3.done
+
+
+    zcat ngsRelate/curvirostris.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/curvirostris.glf3.freq 2> log/ngsRelate/curvirostris.glf3.freq.log
+    
+Submitted job 108 with external jobid 'Submitted batch job 154778'.
+[Thu May  4 16:25:04 2023]
+Error in rule extract_freq:
+    jobid: 108
+    input: ngsRelate/curvirostris.glf3.done
+    output: ngsRelate/curvirostris.glf3.freq
+    log: log/ngsRelate/curvirostris.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/curvirostris.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/curvirostris.glf3.freq 2> log/ngsRelate/curvirostris.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154778
+
+Error executing rule extract_freq on cluster (jobid: 108, external: Submitted batch job 154778, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.108.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 16:41:08 2023]
+Finished job 102.
+6 of 23 steps (26%) done
+Select jobs to execute...
+
+[Thu May  4 16:41:08 2023]
+Job 113:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/longREF9.glf3.freq; Input files updated by another job: ngsRelate/longREF9.glf3.done
+
+
+    zcat ngsRelate/longREF9.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/longREF9.glf3.freq 2> log/ngsRelate/longREF9.glf3.freq.log
+    
+Submitted job 113 with external jobid 'Submitted batch job 154877'.
+[Thu May  4 16:41:37 2023]
+Error in rule extract_freq:
+    jobid: 113
+    input: ngsRelate/longREF9.glf3.done
+    output: ngsRelate/longREF9.glf3.freq
+    log: log/ngsRelate/longREF9.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/longREF9.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/longREF9.glf3.freq 2> log/ngsRelate/longREF9.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154877
+
+Error executing rule extract_freq on cluster (jobid: 113, external: Submitted batch job 154877, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.113.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 17:15:05 2023]
+Finished job 104.
+7 of 23 steps (30%) done
+Select jobs to execute...
+
+[Thu May  4 17:15:05 2023]
+Job 115:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/PEL_long_LC.glf3.freq; Input files updated by another job: ngsRelate/PEL_long_LC.glf3.done
+
+
+    zcat ngsRelate/PEL_long_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PEL_long_LC.glf3.freq 2> log/ngsRelate/PEL_long_LC.glf3.freq.log
+    
+Submitted job 115 with external jobid 'Submitted batch job 155280'.
+[Thu May  4 17:15:44 2023]
+Error in rule extract_freq:
+    jobid: 115
+    input: ngsRelate/PEL_long_LC.glf3.done
+    output: ngsRelate/PEL_long_LC.glf3.freq
+    log: log/ngsRelate/PEL_long_LC.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/PEL_long_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/PEL_long_LC.glf3.freq 2> log/ngsRelate/PEL_long_LC.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 155280
+
+Error executing rule extract_freq on cluster (jobid: 115, external: Submitted batch job 155280, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.115.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 17:21:39 2023]
+Finished job 99.
+8 of 23 steps (35%) done
+Select jobs to execute...
+
+[Thu May  4 17:21:39 2023]
+Job 110:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/galREF9.glf3.freq; Input files updated by another job: ngsRelate/galREF9.glf3.done
+
+
+    zcat ngsRelate/galREF9.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/galREF9.glf3.freq 2> log/ngsRelate/galREF9.glf3.freq.log
+    
+Submitted job 110 with external jobid 'Submitted batch job 155321'.
+[Thu May  4 17:22:18 2023]
+Error in rule extract_freq:
+    jobid: 110
+    input: ngsRelate/galREF9.glf3.done
+    output: ngsRelate/galREF9.glf3.freq
+    log: log/ngsRelate/galREF9.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/galREF9.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/galREF9.glf3.freq 2> log/ngsRelate/galREF9.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 155321
+
+Error executing rule extract_freq on cluster (jobid: 110, external: Submitted batch job 155321, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.110.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu May  4 18:54:35 2023]
+Finished job 100.
+9 of 23 steps (39%) done
+Select jobs to execute...
+
+[Thu May  4 18:54:35 2023]
+Job 111:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/hatched_gal_LC.glf3.freq; Input files updated by another job: ngsRelate/hatched_gal_LC.glf3.done
+
+
+    zcat ngsRelate/hatched_gal_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/hatched_gal_LC.glf3.freq 2> log/ngsRelate/hatched_gal_LC.glf3.freq.log
+    
+Submitted job 111 with external jobid 'Submitted batch job 155354'.
+[Thu May  4 18:54:46 2023]
+Error in rule extract_freq:
+    jobid: 111
+    input: ngsRelate/hatched_gal_LC.glf3.done
+    output: ngsRelate/hatched_gal_LC.glf3.freq
+    log: log/ngsRelate/hatched_gal_LC.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/hatched_gal_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/hatched_gal_LC.glf3.freq 2> log/ngsRelate/hatched_gal_LC.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 155354
+
+Error executing rule extract_freq on cluster (jobid: 111, external: Submitted batch job 155354, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.111.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri May  5 00:42:34 2023]
+Error in rule angsd_ngsRelate_POP:
+    jobid: 95
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta, list/saf/ALL_gal_LC.list
+    output: ngsRelate/ALL_gal_LC.glf3.done
+    log: log/ngsRelate/ALL_gal_LC.glf3.log (check log file(s) for error details)
+    shell:
+        
+    angsd -b list/saf/ALL_gal_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/ALL_gal_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/ALL_gal_LC.glf3.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 154459
+
+Error executing rule angsd_ngsRelate_POP on cluster (jobid: 95, external: Submitted batch job 154459, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.angsd_ngsRelate_POP.95.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri May  5 01:35:26 2023]
+Finished job 98.
+10 of 23 steps (43%) done
+Select jobs to execute...
+
+[Fri May  5 01:35:26 2023]
+Job 109:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/EGGS_gal_LC.glf3.freq; Input files updated by another job: ngsRelate/EGGS_gal_LC.glf3.done
+
+
+    zcat ngsRelate/EGGS_gal_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/EGGS_gal_LC.glf3.freq 2> log/ngsRelate/EGGS_gal_LC.glf3.freq.log
+    
+Submitted job 109 with external jobid 'Submitted batch job 155454'.
+[Fri May  5 01:35:46 2023]
+Error in rule extract_freq:
+    jobid: 109
+    input: ngsRelate/EGGS_gal_LC.glf3.done
+    output: ngsRelate/EGGS_gal_LC.glf3.freq
+    log: log/ngsRelate/EGGS_gal_LC.glf3.freq.log (check log file(s) for error details)
+    shell:
+        
+    zcat ngsRelate/EGGS_gal_LC.glf3.mafs.gz | cut -f5 | sed 1d > ngsRelate/EGGS_gal_LC.glf3.freq 2> log/ngsRelate/EGGS_gal_LC.glf3.freq.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 155454
+
+Error executing rule extract_freq on cluster (jobid: 109, external: Submitted batch job 155454, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.q3a4vw1c/snakejob.extract_freq.109.sh). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-04T155420.519635.snakemake.log

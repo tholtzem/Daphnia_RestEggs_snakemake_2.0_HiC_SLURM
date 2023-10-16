@@ -1,0 +1,22 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+twodsfs_folded        1             12             12
+total                 2              1             12
+
+Select jobs to execute...
+
+[Wed Apr 19 11:29:09 2023]
+Job 4:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: /scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC/saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs
+
+
+    DIR=(/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC)
+    realSFS $DIR/saf/POPS/ALL_gal_LC*.GL2.saf.idx $DIR/saf/POPS/PEL_long_LC*.GL2.saf.idx -fold 1 > /scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC/saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs 2> log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs.log
+    
+Submitted job 4 with external jobid 'Submitted batch job 138384'.
+slurmstepd-n029: error: *** JOB 138383 ON n029 CANCELLED AT 2023-04-24T10:51:37 ***

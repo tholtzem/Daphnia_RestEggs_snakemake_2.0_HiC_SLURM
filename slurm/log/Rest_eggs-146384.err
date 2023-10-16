@@ -1,0 +1,101 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                  count    min threads    max threads
+-----------------  -------  -------------  -------------
+Fst_global_3pops         1              2              2
+Fst_windows_3pops        3              2              2
+all                      1              1              1
+total                    5              1              2
+
+Select jobs to execute...
+
+[Sun Apr 30 18:32:25 2023]
+Job 91:  Get the Fst estimates per window 
+Reason: Missing output files: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv
+
+
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 1 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.log
+    
+Submitted job 91 with external jobid 'Submitted batch job 146385'.
+
+[Sun Apr 30 18:32:26 2023]
+Job 92:  Get the Fst estimates per window 
+Reason: Missing output files: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv
+
+
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 2 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.log
+    
+Submitted job 92 with external jobid 'Submitted batch job 146386'.
+
+[Sun Apr 30 18:32:26 2023]
+Job 93:  Get the Fst estimates per window 
+Reason: Missing output files: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv
+
+
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 3 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.log
+    
+Submitted job 93 with external jobid 'Submitted batch job 146387'.
+
+[Sun Apr 30 18:32:26 2023]
+Job 90:  Get the global Fst estimate 
+Reason: Missing output files: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv
+
+
+    realSFS fst stats saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst_Global.log
+    
+Submitted job 90 with external jobid 'Submitted batch job 146388'.
+[Sun Apr 30 18:33:01 2023]
+Error in rule Fst_windows_3pops:
+    jobid: 91
+    input: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done
+    output: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv
+    log: log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.log (check log file(s) for error details)
+    shell:
+        
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 1 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 146385
+
+Error executing rule Fst_windows_3pops on cluster (jobid: 91, external: Submitted batch job 146385, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.4of0aegm/snakejob.Fst_windows_3pops.91.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Fst_windows_3pops since they might be corrupted:
+saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv
+[Sun Apr 30 18:33:02 2023]
+Error in rule Fst_windows_3pops:
+    jobid: 92
+    input: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done
+    output: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv
+    log: log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.log (check log file(s) for error details)
+    shell:
+        
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 2 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 146386
+
+Error executing rule Fst_windows_3pops on cluster (jobid: 92, external: Submitted batch job 146386, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.4of0aegm/snakejob.Fst_windows_3pops.92.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Fst_windows_3pops since they might be corrupted:
+saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv
+[Sun Apr 30 18:33:03 2023]
+Error in rule Fst_windows_3pops:
+    jobid: 93
+    input: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done
+    output: saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv
+    log: log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.log (check log file(s) for error details)
+    shell:
+        
+      realSFS fst stats2 saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.idx -win 10000 -step 1000 -type 3 > saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 146387
+
+Error executing rule Fst_windows_3pops on cluster (jobid: 93, external: Submitted batch job 146387, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.4of0aegm/snakejob.Fst_windows_3pops.93.sh). For error details see the cluster log and the log files of the involved rule(s).
+Removing output files of failed job Fst_windows_3pops since they might be corrupted:
+saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv
+[Sun Apr 30 18:33:04 2023]
+Finished job 90.
+1 of 5 steps (20%) done
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-04-30T183225.345450.snakemake.log

@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                    count    min threads    max threads
+-------------------  -------  -------------  -------------
+all                        1              1              1
+angsd_ngsRelate_POP        1              2              2
+extract_freq               1              1              1
+total                      3              1              2
+
+Select jobs to execute...
+
+[Sun May  7 09:24:02 2023]
+Job 102:  Estimate allele frequencies and calculate GLs while SNP calling for each population using angsd 
+Reason: Missing output files: ngsRelate/PEL_F1_LC.glf3.done
+
+
+    angsd -b list/saf/PEL_F1_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ngsRelate/PEL_F1_LC.glf3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -skipTriallelic 1 -GL 2 -doGlf 3 -doMajorMinor 1 -doMaf 1 -SNP_pval 1e-6 -minMaf 0.05 -doCounts 1 2> log/ngsRelate/PEL_F1_LC.glf3.log
+    
+Submitted job 102 with external jobid 'Submitted batch job 157315'.
+[Sun May  7 10:11:05 2023]
+Finished job 102.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Sun May  7 10:11:05 2023]
+Job 101:  Extract the frequency column from the allele frequency file and remove the header (to make it in the format NgsRelate needs)  
+Reason: Missing output files: ngsRelate/PEL_F1_LC.glf3.freq; Input files updated by another job: ngsRelate/PEL_F1_LC.glf3.done
+
+
+    zcat ngsRelate/PEL_F1_LC.glf3.mafs.gz | cut -f6 | sed 1d > ngsRelate/PEL_F1_LC.glf3.freq 2> log/ngsRelate/PEL_F1_LC.glf3.freq.log
+    
+Submitted job 101 with external jobid 'Submitted batch job 157323'.
+[Sun May  7 10:11:25 2023]
+Finished job 101.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Sun May  7 10:11:25 2023]
+localrule all:
+    input: saf/POPS/ALL_gal_LC_100_100_5343.GL2.saf.idx.done, saf/POPS/cucREF7_7_7_284.GL2.saf.idx.done, saf/POPS/curvirostris_8_8_82.GL2.saf.idx.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.saf.idx.done, saf/POPS/galREF9_9_9_467.GL2.saf.idx.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.saf.idx.done, saf/POPS/longREF7_7_7_317.GL2.saf.idx.done, saf/POPS/longREF9_9_9_393.GL2.saf.idx.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done, saf/POPS/PEL_long_LC_17_17_480.GL2.saf.idx.done, saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.1D.sfs, saf/POPS/cucREF7_7_7_284.GL2.1D.sfs, saf/POPS/curvirostris_8_8_82.GL2.1D.sfs, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.1D.sfs, saf/POPS/galREF9_9_9_467.GL2.1D.sfs, saf/POPS/hatched_gal_LC_22_22_1161.GL2.1D.sfs, saf/POPS/longREF7_7_7_317.GL2.1D.sfs, saf/POPS/longREF9_9_9_393.GL2.1D.sfs, saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs, saf/POPS/PEL_long_LC_17_17_480.GL2.1D.sfs, saf/POPS/PRE_long_LC_8_8_276.GL2.1D.sfs, saf/POPS/ALL_gal_LC_100_100_5343.GL2.sfs2theta.done, saf/POPS/cucREF7_7_7_284.GL2.sfs2theta.done, saf/POPS/curvirostris_8_8_82.GL2.sfs2theta.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.sfs2theta.done, saf/POPS/galREF9_9_9_467.GL2.sfs2theta.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.sfs2theta.done, saf/POPS/longREF7_7_7_317.GL2.sfs2theta.done, saf/POPS/longREF9_9_9_393.GL2.sfs2theta.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done, saf/POPS/PEL_long_LC_17_17_480.GL2.sfs2theta.done, saf/POPS/PRE_long_LC_8_8_276.GL2.sfs2theta.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_chrom.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_chrom.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_chrom.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_chrom.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_chrom.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_chrom.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_chrom.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_chrom.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_chrom.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_chrom.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_Window10kb.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_Window10kb.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_Window10kb.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_Window10kb.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_Window10kb.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_Window10kb.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_Window10kb.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/longREF9_vs_galREF9_2D.sfs, saf/POPS/longREF9_vs_cucREF7_2D.sfs, saf/POPS/longREF7_vs_galREF9_2D.sfs, saf/POPS/longREF7_vs_cucREF7_2D.sfs, saf/POPS/galREF9_vs_cucREF7_2D.sfs, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/longREF9_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF9_vs_cucREF7.fstIndex.done, saf/POPS/2pops/longREF7_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF7_vs_cucREF7.fstIndex.done, saf/POPS/2pops/galREF9_vs_cucREF7.fstIndex.done, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, ngsRelate/PEL_cuc_LC.glf3.freq, ngsRelate/PEL_long_LC.glf3.freq, ngsRelate/PRE_long_LC.glf3.freq, ngsRelate/PEL_F1_LC.glf3.freq
+    jobid: 0
+    reason: Input files updated by another job: ngsRelate/PEL_F1_LC.glf3.freq
+    resources: mem_mb=1000, mem_mib=954, disk_mb=4172, disk_mib=3979, tmpdir=/tmp, partition=std, walltime=120:00:00
+
+[Sun May  7 10:11:25 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-05-07T092401.257453.snakemake.log

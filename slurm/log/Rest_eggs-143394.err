@@ -1,0 +1,524 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                 count    min threads    max threads
+----------------  -------  -------------  -------------
+Fst_index_2pops        11              4              4
+Fst_index_3pops         1              4              4
+all                     1              1              1
+angsd_SAF_POP           1              2              2
+onedsfs_folded          1              2              2
+sfs2theta               1              2              2
+theta_stat_SW           1             12             12
+theta_stat_chrom        1              2              2
+twodsfs_folded         11              2              2
+total                  29              1             12
+
+Select jobs to execute...
+
+[Thu Apr 27 09:32:04 2023]
+Job 9:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done
+
+
+    angsd -b list/saf/PEL_cuc_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out saf/POPS/PEL_cuc_LC_8_8_215.GL2 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -minInd 8 -setMinDepth 8 -setMaxDepth 215 -GL 2 -doCounts 1 -doSaf 1 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.log
+    
+Submitted job 9 with external jobid 'Submitted batch job 143395'.
+[Thu Apr 27 09:49:25 2023]
+Finished job 9.
+1 of 29 steps (3%) done
+Select jobs to execute...
+
+[Thu Apr 27 09:49:25 2023]
+Job 20:  Optimize .saf.idx and calculate 1dsfs's using realSFS and fold for theta estimates 
+Reason: Missing output files: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done
+
+
+    realSFS saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx -fold 1 > saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs.log
+    
+Submitted job 20 with external jobid 'Submitted batch job 143398'.
+[Thu Apr 27 09:55:15 2023]
+Finished job 20.
+2 of 29 steps (7%) done
+Select jobs to execute...
+
+[Thu Apr 27 09:55:15 2023]
+Job 62:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/longREF9_vs_galREF9_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/longREF9*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -fold 1 > saf/POPS/longREF9_vs_galREF9_2D.sfs 2> log/saf_POPS/longREF9_vs_galREF9_2D.sfs.log
+    
+Submitted job 62 with external jobid 'Submitted batch job 143399'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 31:  calculate theta estimates for each site 
+Reason: Missing output files: saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs, saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done
+
+
+    realSFS saf2theta saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx -sfs saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs -outname saf/POPS/PEL_cuc_LC_8_8_215.GL2 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.log 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.log
+    
+Submitted job 31 with external jobid 'Submitted batch job 143400'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 56:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -fold 1 > saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs 2> log/saf_POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs.log
+    
+Submitted job 56 with external jobid 'Submitted batch job 143401'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 64:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/longREF7_vs_galREF9_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/longREF7*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -fold 1 > saf/POPS/longREF7_vs_galREF9_2D.sfs 2> log/saf_POPS/longREF7_vs_galREF9_2D.sfs.log
+    
+Submitted job 64 with external jobid 'Submitted batch job 143402'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 58:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/ALL_gal_LC*.GL2.saf.idx -fold 1 > saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs.log
+    
+Submitted job 58 with external jobid 'Submitted batch job 143403'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 60:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/PEL_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -fold 1 > saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs 2> log/saf_POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs.log
+    
+Submitted job 60 with external jobid 'Submitted batch job 143404'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 61:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -fold 1 > saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs 2> log/saf_POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs.log
+    
+Submitted job 61 with external jobid 'Submitted batch job 143405'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 63:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/longREF9_vs_cucREF7_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/longREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -fold 1 > saf/POPS/longREF9_vs_cucREF7_2D.sfs 2> log/saf_POPS/longREF9_vs_cucREF7_2D.sfs.log
+    
+Submitted job 63 with external jobid 'Submitted batch job 143406'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 57:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -fold 1 > saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs 2> log/saf_POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs.log
+    
+Submitted job 57 with external jobid 'Submitted batch job 143407'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 65:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/longREF7_vs_cucREF7_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/longREF7*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -fold 1 > saf/POPS/longREF7_vs_cucREF7_2D.sfs 2> log/saf_POPS/longREF7_vs_cucREF7_2D.sfs.log
+    
+Submitted job 65 with external jobid 'Submitted batch job 143408'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 59:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -fold 1 > saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs 2> log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs.log
+    
+Submitted job 59 with external jobid 'Submitted batch job 143409'.
+
+[Thu Apr 27 09:55:15 2023]
+Job 66:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/galREF9_vs_cucREF7_2D.sfs; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs
+
+ 
+    realSFS saf/POPS/galREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -fold 1 > saf/POPS/galREF9_vs_cucREF7_2D.sfs 2> log/saf_POPS/galREF9_vs_cucREF7_2D.sfs.log
+    
+Submitted job 66 with external jobid 'Submitted batch job 143410'.
+[Thu Apr 27 09:56:50 2023]
+Finished job 31.
+3 of 29 steps (10%) done
+Select jobs to execute...
+
+[Thu Apr 27 09:56:50 2023]
+Job 53:  Estimate Tajimas D and other statistics using a sliding window analysis 
+Reason: Missing output files: saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done
+
+
+    thetaStat do_stat saf/POPS/PEL_cuc_LC_8_8_215.GL2.thetas.idx -win 10000 -step 1000 -outnames saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.log
+    
+Submitted job 53 with external jobid 'Submitted batch job 143411'.
+
+[Thu Apr 27 09:56:50 2023]
+Job 42:  Estimate Tajimas D and other statistics 
+Reason: Missing output files: saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done; Input files updated by another job: saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done
+
+
+    thetaStat do_stat saf/POPS/PEL_cuc_LC_8_8_215.GL2.thetas.idx 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.log
+    
+Submitted job 42 with external jobid 'Submitted batch job 143412'.
+[Thu Apr 27 09:57:10 2023]
+Error in rule theta_stat_SW:
+    jobid: 53
+    input: saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done
+    output: saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done
+    log: log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.log (check log file(s) for error details)
+    shell:
+        
+    thetaStat do_stat saf/POPS/PEL_cuc_LC_8_8_215.GL2.thetas.idx -win 10000 -step 1000 -outnames saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143411
+
+Error executing rule theta_stat_SW on cluster (jobid: 53, external: Submitted batch job 143411, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.theta_stat_SW.53.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 09:57:11 2023]
+Error in rule theta_stat_chrom:
+    jobid: 42
+    input: saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done
+    output: saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done
+    log: log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.log (check log file(s) for error details)
+    shell:
+        
+    thetaStat do_stat saf/POPS/PEL_cuc_LC_8_8_215.GL2.thetas.idx 2> log/saf_POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143412
+
+Error executing rule theta_stat_chrom on cluster (jobid: 42, external: Submitted batch job 143412, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.theta_stat_chrom.42.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:24:02 2023]
+Finished job 65.
+4 of 29 steps (14%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:24:02 2023]
+Job 76:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/longREF7_vs_cucREF7.fstIndex.done; Input files updated by another job: saf/POPS/longREF7_vs_cucREF7_2D.sfs
+
+
+    realSFS fst index saf/POPS/longREF7*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/longREF7_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/longREF7_vs_cucREF7 -whichFst 1 2> log/saf_POPS/longREF7_vs_cucREF7.fstIndex.log
+    
+Submitted job 76 with external jobid 'Submitted batch job 143414'.
+[Thu Apr 27 10:24:17 2023]
+Finished job 64.
+5 of 29 steps (17%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:24:17 2023]
+Job 75:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/longREF7_vs_galREF9.fstIndex.done; Input files updated by another job: saf/POPS/longREF7_vs_galREF9_2D.sfs
+
+
+    realSFS fst index saf/POPS/longREF7*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -sfs saf/POPS/longREF7_vs_galREF9_2D.sfs -fstout saf/POPS/2pops/longREF7_vs_galREF9 -whichFst 1 2> log/saf_POPS/longREF7_vs_galREF9.fstIndex.log
+    
+Submitted job 75 with external jobid 'Submitted batch job 143415'.
+[Thu Apr 27 10:24:34 2023]
+Error in rule Fst_index_2pops:
+    jobid: 75
+    input: saf/POPS/longREF7_vs_galREF9_2D.sfs
+    output: saf/POPS/pop2/longREF7_vs_galREF9.fstIndex.done
+    log: log/saf_POPS/longREF7_vs_galREF9.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/longREF7*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -sfs saf/POPS/longREF7_vs_galREF9_2D.sfs -fstout saf/POPS/2pops/longREF7_vs_galREF9 -whichFst 1 2> log/saf_POPS/longREF7_vs_galREF9.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143415
+
+Error executing rule Fst_index_2pops on cluster (jobid: 75, external: Submitted batch job 143415, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.75.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:24:35 2023]
+Error in rule Fst_index_2pops:
+    jobid: 76
+    input: saf/POPS/longREF7_vs_cucREF7_2D.sfs
+    output: saf/POPS/pop2/longREF7_vs_cucREF7.fstIndex.done
+    log: log/saf_POPS/longREF7_vs_cucREF7.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/longREF7*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/longREF7_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/longREF7_vs_cucREF7 -whichFst 1 2> log/saf_POPS/longREF7_vs_cucREF7.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143414
+
+Error executing rule Fst_index_2pops on cluster (jobid: 76, external: Submitted batch job 143414, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.76.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:27:08 2023]
+Finished job 66.
+6 of 29 steps (21%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:27:08 2023]
+Job 77:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/galREF9_vs_cucREF7.fstIndex.done; Input files updated by another job: saf/POPS/galREF9_vs_cucREF7_2D.sfs
+
+
+    realSFS fst index saf/POPS/galREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/galREF9_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/galREF9_vs_cucREF7 -whichFst 1 2> log/saf_POPS/galREF9_vs_cucREF7.fstIndex.log
+    
+Submitted job 77 with external jobid 'Submitted batch job 143416'.
+[Thu Apr 27 10:27:44 2023]
+Error in rule Fst_index_2pops:
+    jobid: 77
+    input: saf/POPS/galREF9_vs_cucREF7_2D.sfs
+    output: saf/POPS/pop2/galREF9_vs_cucREF7.fstIndex.done
+    log: log/saf_POPS/galREF9_vs_cucREF7.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/galREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/galREF9_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/galREF9_vs_cucREF7 -whichFst 1 2> log/saf_POPS/galREF9_vs_cucREF7.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143416
+
+Error executing rule Fst_index_2pops on cluster (jobid: 77, external: Submitted batch job 143416, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.77.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:31:52 2023]
+Finished job 62.
+7 of 29 steps (24%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:31:52 2023]
+Job 73:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/longREF9_vs_galREF9.fstIndex.done; Input files updated by another job: saf/POPS/longREF9_vs_galREF9_2D.sfs
+
+
+    realSFS fst index saf/POPS/longREF9*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -sfs saf/POPS/longREF9_vs_galREF9_2D.sfs -fstout saf/POPS/2pops/longREF9_vs_galREF9 -whichFst 1 2> log/saf_POPS/longREF9_vs_galREF9.fstIndex.log
+    
+Submitted job 73 with external jobid 'Submitted batch job 143417'.
+[Thu Apr 27 10:32:09 2023]
+Error in rule Fst_index_2pops:
+    jobid: 73
+    input: saf/POPS/longREF9_vs_galREF9_2D.sfs
+    output: saf/POPS/pop2/longREF9_vs_galREF9.fstIndex.done
+    log: log/saf_POPS/longREF9_vs_galREF9.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/longREF9*.GL2.saf.idx saf/POPS/galREF9*.GL2.saf.idx -sfs saf/POPS/longREF9_vs_galREF9_2D.sfs -fstout saf/POPS/2pops/longREF9_vs_galREF9 -whichFst 1 2> log/saf_POPS/longREF9_vs_galREF9.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143417
+
+Error executing rule Fst_index_2pops on cluster (jobid: 73, external: Submitted batch job 143417, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.73.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:32:14 2023]
+Finished job 63.
+8 of 29 steps (28%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:32:14 2023]
+Job 74:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/longREF9_vs_cucREF7.fstIndex.done; Input files updated by another job: saf/POPS/longREF9_vs_cucREF7_2D.sfs
+
+
+    realSFS fst index saf/POPS/longREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/longREF9_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/longREF9_vs_cucREF7 -whichFst 1 2> log/saf_POPS/longREF9_vs_cucREF7.fstIndex.log
+    
+Submitted job 74 with external jobid 'Submitted batch job 143418'.
+[Thu Apr 27 10:32:42 2023]
+Error in rule Fst_index_2pops:
+    jobid: 74
+    input: saf/POPS/longREF9_vs_cucREF7_2D.sfs
+    output: saf/POPS/pop2/longREF9_vs_cucREF7.fstIndex.done
+    log: log/saf_POPS/longREF9_vs_cucREF7.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/longREF9*.GL2.saf.idx saf/POPS/cucREF7*.GL2.saf.idx -sfs saf/POPS/longREF9_vs_cucREF7_2D.sfs -fstout saf/POPS/2pops/longREF9_vs_cucREF7 -whichFst 1 2> log/saf_POPS/longREF9_vs_cucREF7.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143418
+
+Error executing rule Fst_index_2pops on cluster (jobid: 74, external: Submitted batch job 143418, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.74.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 10:48:18 2023]
+Finished job 57.
+9 of 29 steps (31%) done
+Select jobs to execute...
+
+[Thu Apr 27 10:48:18 2023]
+Job 68:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done; Input files updated by another job: saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+Submitted job 68 with external jobid 'Submitted batch job 143420'.
+[Thu Apr 27 10:48:44 2023]
+Error in rule Fst_index_2pops:
+    jobid: 68
+    input: saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs
+    output: saf/POPS/pop2/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done
+    log: log/saf_POPS/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143420
+
+Error executing rule Fst_index_2pops on cluster (jobid: 68, external: Submitted batch job 143420, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.68.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 12:12:09 2023]
+Finished job 56.
+10 of 29 steps (34%) done
+Select jobs to execute...
+
+[Thu Apr 27 12:12:09 2023]
+Job 67:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/PRE_long_LC_vs_PEL_long_LC.fstIndex.done; Input files updated by another job: saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_PEL_long_LC.fstIndex.log
+    
+Submitted job 67 with external jobid 'Submitted batch job 143483'.
+[Thu Apr 27 12:12:51 2023]
+Error in rule Fst_index_2pops:
+    jobid: 67
+    input: saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs
+    output: saf/POPS/pop2/PRE_long_LC_vs_PEL_long_LC.fstIndex.done
+    log: log/saf_POPS/PRE_long_LC_vs_PEL_long_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_PEL_long_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143483
+
+Error executing rule Fst_index_2pops on cluster (jobid: 67, external: Submitted batch job 143483, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.67.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Apr 27 12:22:51 2023]
+Finished job 60.
+11 of 29 steps (38%) done
+Select jobs to execute...
+
+[Thu Apr 27 12:22:51 2023]
+Job 71:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done; Input files updated by another job: saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/PEL_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+Submitted job 71 with external jobid 'Submitted batch job 143484'.
+[Thu Apr 27 12:23:16 2023]
+Error in rule Fst_index_2pops:
+    jobid: 71
+    input: saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs
+    output: saf/POPS/pop2/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done
+    log: log/saf_POPS/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/PEL_long_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143484
+
+Error executing rule Fst_index_2pops on cluster (jobid: 71, external: Submitted batch job 143484, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.71.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Apr 28 01:36:55 2023]
+Finished job 61.
+12 of 29 steps (41%) done
+Select jobs to execute...
+
+[Fri Apr 28 01:36:55 2023]
+Job 72:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done; Input files updated by another job: saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+Submitted job 72 with external jobid 'Submitted batch job 143910'.
+[Fri Apr 28 01:37:30 2023]
+Error in rule Fst_index_2pops:
+    jobid: 72
+    input: saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs
+    output: saf/POPS/pop2/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done
+    log: log/saf_POPS/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_cuc_LC*.GL2.saf.idx -sfs saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs -fstout saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC -whichFst 1 2> log/saf_POPS/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143910
+
+Error executing rule Fst_index_2pops on cluster (jobid: 72, external: Submitted batch job 143910, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.72.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Apr 28 04:01:57 2023]
+Finished job 58.
+13 of 29 steps (45%) done
+Select jobs to execute...
+
+[Fri Apr 28 04:01:57 2023]
+Job 69:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done; Input files updated by another job: saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/ALL_gal_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC.fstIndex.log
+    
+Submitted job 69 with external jobid 'Submitted batch job 143913'.
+[Fri Apr 28 04:02:30 2023]
+Error in rule Fst_index_2pops:
+    jobid: 69
+    input: saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs
+    output: saf/POPS/pop2/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done
+    log: log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/ALL_gal_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs -fstout saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 143913
+
+Error executing rule Fst_index_2pops on cluster (jobid: 69, external: Submitted batch job 143913, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.69.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Apr 28 20:33:23 2023]
+Finished job 59.
+14 of 29 steps (48%) done
+Select jobs to execute...
+
+[Fri Apr 28 20:33:23 2023]
+Job 78:  Index fst for easy window analysis 
+Reason: Missing output files: saf/POPS/pop3/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done; Input files updated by another job: saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs -sfs saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs -sfs saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.log
+    
+Submitted job 78 with external jobid 'Submitted batch job 144661'.
+
+[Fri Apr 28 20:33:23 2023]
+Job 70:  Index fst for easy window analysis (2 pops) 
+Reason: Missing output files: saf/POPS/pop2/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done; Input files updated by another job: saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs
+
+
+    realSFS fst index saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC.fstIndex.log
+    
+Submitted job 70 with external jobid 'Submitted batch job 144662'.
+[Fri Apr 28 20:33:33 2023]
+Error in rule Fst_index_3pops:
+    jobid: 78
+    input: saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs
+    output: saf/POPS/pop3/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done
+    log: log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/PRE_long_LC*.GL2.saf.idx saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs -sfs saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs -sfs saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 144661
+
+Error executing rule Fst_index_3pops on cluster (jobid: 78, external: Submitted batch job 144661, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_3pops.78.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Apr 28 20:33:34 2023]
+Error in rule Fst_index_2pops:
+    jobid: 70
+    input: saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs
+    output: saf/POPS/pop2/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done
+    log: log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC.fstIndex.log (check log file(s) for error details)
+    shell:
+        
+    realSFS fst index saf/POPS/ALL_gal_LC*.GL2.saf.idx saf/POPS/PEL_long_LC*.GL2.saf.idx -sfs saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs -fstout saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC -whichFst 1 2> log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC.fstIndex.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 144662
+
+Error executing rule Fst_index_2pops on cluster (jobid: 70, external: Submitted batch job 144662, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.dpmt54bb/snakejob.Fst_index_2pops.70.sh). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-04-27T093203.289351.snakemake.log

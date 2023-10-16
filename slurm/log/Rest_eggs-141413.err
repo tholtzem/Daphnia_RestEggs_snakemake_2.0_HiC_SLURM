@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+angsd_SAF_POP        1             12             12
+total                2              1             12
+
+Select jobs to execute...
+
+[Mon Apr 24 17:32:02 2023]
+Job 1:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done
+
+
+    angsd -b list/saf/PRE_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out saf/POPS/PRE_long_LC_8_8_276.GL2 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -minInd 8 -setMinDepth 8 -setMaxDepth 276 -GL 2 -doCounts 1 -doSaf 1 2> log/saf_POPS/PRE_long_LC_8_8_276.GL2.saf.idx.log
+    
+Submitted job 1 with external jobid 'Submitted batch job 141415'.
+slurmstepd-n018: error: *** JOB 141413 ON n018 CANCELLED AT 2023-04-24T17:33:04 ***

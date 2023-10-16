@@ -1,0 +1,156 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job          count    min threads    max threads
+---------  -------  -------------  -------------
+Fst_print       11              2              2
+all              1              1              1
+total           12              1              2
+
+Select jobs to execute...
+
+[Sun Apr 30 21:20:23 2023]
+Job 103:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/longREF7_vs_cucREF7.fst.idx | gzip > saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz 2> log/saf_POPS/longREF7_vs_cucREF7.A_B.log
+    
+Submitted job 103 with external jobid 'Submitted batch job 146558'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 96:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.idx | gzip > saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz 2> log/saf_POPS/PRE_long_LC_vs_ALL_gal_LC.A_B.log
+    
+Submitted job 96 with external jobid 'Submitted batch job 146559'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 98:  Get the numerator and denominator of Fst per site 
+Reason: Forced execution
+
+
+    realSFS fst print saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.idx | gzip > saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz 2> log/saf_POPS/PEL_long_LC_vs_PEL_cuc_LC.A_B.log
+    
+Submitted job 98 with external jobid 'Submitted batch job 146560'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 100:  Get the numerator and denominator of Fst per site 
+Reason: Forced execution
+
+
+    realSFS fst print saf/POPS/2pops/longREF9_vs_galREF9.fst.idx | gzip > saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz 2> log/saf_POPS/longREF9_vs_galREF9.A_B.log
+    
+Submitted job 100 with external jobid 'Submitted batch job 146561'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 102:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/longREF7_vs_galREF9.fst.idx | gzip > saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz 2> log/saf_POPS/longREF7_vs_galREF9.A_B.log
+    
+Submitted job 102 with external jobid 'Submitted batch job 146562'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 95:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.idx | gzip > saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz 2> log/saf_POPS/PRE_long_LC_vs_PEL_cuc_LC.A_B.log
+    
+Submitted job 95 with external jobid 'Submitted batch job 146563'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 104:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/galREF9_vs_cucREF7.fst.idx | gzip > saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz 2> log/saf_POPS/galREF9_vs_cucREF7.A_B.log
+    
+Submitted job 104 with external jobid 'Submitted batch job 146564'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 97:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.idx | gzip > saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz 2> log/saf_POPS/ALL_gal_LC_vs_PEL_long_LC.A_B.log
+    
+Submitted job 97 with external jobid 'Submitted batch job 146565'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 99:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.idx | gzip > saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz 2> log/saf_POPS/ALL_gal_LC_vs_PEL_cuc_LC.A_B.log
+    
+Submitted job 99 with external jobid 'Submitted batch job 146566'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 101:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/longREF9_vs_cucREF7.fst.idx | gzip > saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz 2> log/saf_POPS/longREF9_vs_cucREF7.A_B.log
+    
+Submitted job 101 with external jobid 'Submitted batch job 146567'.
+
+[Sun Apr 30 21:20:23 2023]
+Job 94:  Get the numerator and denominator of Fst per site 
+Reason: Missing output files: saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz
+
+
+    realSFS fst print saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.idx | gzip > saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz 2> log/saf_POPS/PRE_long_LC_vs_PEL_long_LC.A_B.log
+    
+Submitted job 94 with external jobid 'Submitted batch job 146568'.
+[Sun Apr 30 21:21:18 2023]
+Finished job 95.
+1 of 12 steps (8%) done
+[Sun Apr 30 21:21:20 2023]
+Finished job 97.
+2 of 12 steps (17%) done
+[Sun Apr 30 21:21:21 2023]
+Finished job 99.
+3 of 12 steps (25%) done
+[Sun Apr 30 21:21:22 2023]
+Finished job 101.
+4 of 12 steps (33%) done
+[Sun Apr 30 21:21:23 2023]
+Finished job 94.
+5 of 12 steps (42%) done
+[Sun Apr 30 21:21:33 2023]
+Finished job 103.
+6 of 12 steps (50%) done
+[Sun Apr 30 21:21:34 2023]
+Finished job 96.
+7 of 12 steps (58%) done
+[Sun Apr 30 21:21:35 2023]
+Finished job 98.
+8 of 12 steps (67%) done
+[Sun Apr 30 21:21:36 2023]
+Finished job 100.
+9 of 12 steps (75%) done
+[Sun Apr 30 21:21:37 2023]
+Finished job 102.
+10 of 12 steps (83%) done
+[Sun Apr 30 21:21:38 2023]
+Finished job 104.
+11 of 12 steps (92%) done
+Select jobs to execute...
+
+[Sun Apr 30 21:21:38 2023]
+localrule all:
+    input: saf/POPS/ALL_gal_LC_100_100_5343.GL2.saf.idx.done, saf/POPS/cucREF7_7_7_284.GL2.saf.idx.done, saf/POPS/curvirostris_8_8_82.GL2.saf.idx.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.saf.idx.done, saf/POPS/galREF9_9_9_467.GL2.saf.idx.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.saf.idx.done, saf/POPS/longREF7_7_7_317.GL2.saf.idx.done, saf/POPS/longREF9_9_9_393.GL2.saf.idx.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done, saf/POPS/PEL_long_LC_17_17_480.GL2.saf.idx.done, saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.1D.sfs, saf/POPS/cucREF7_7_7_284.GL2.1D.sfs, saf/POPS/curvirostris_8_8_82.GL2.1D.sfs, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.1D.sfs, saf/POPS/galREF9_9_9_467.GL2.1D.sfs, saf/POPS/hatched_gal_LC_22_22_1161.GL2.1D.sfs, saf/POPS/longREF7_7_7_317.GL2.1D.sfs, saf/POPS/longREF9_9_9_393.GL2.1D.sfs, saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs, saf/POPS/PEL_long_LC_17_17_480.GL2.1D.sfs, saf/POPS/PRE_long_LC_8_8_276.GL2.1D.sfs, saf/POPS/ALL_gal_LC_100_100_5343.GL2.sfs2theta.done, saf/POPS/cucREF7_7_7_284.GL2.sfs2theta.done, saf/POPS/curvirostris_8_8_82.GL2.sfs2theta.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.sfs2theta.done, saf/POPS/galREF9_9_9_467.GL2.sfs2theta.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.sfs2theta.done, saf/POPS/longREF7_7_7_317.GL2.sfs2theta.done, saf/POPS/longREF9_9_9_393.GL2.sfs2theta.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done, saf/POPS/PEL_long_LC_17_17_480.GL2.sfs2theta.done, saf/POPS/PRE_long_LC_8_8_276.GL2.sfs2theta.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_chrom.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_chrom.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_chrom.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_chrom.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_chrom.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_chrom.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_chrom.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_chrom.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_chrom.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_chrom.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_Window10kb.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_Window10kb.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_Window10kb.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_Window10kb.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_Window10kb.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_Window10kb.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_Window10kb.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/longREF9_vs_galREF9_2D.sfs, saf/POPS/longREF9_vs_cucREF7_2D.sfs, saf/POPS/longREF7_vs_galREF9_2D.sfs, saf/POPS/longREF7_vs_cucREF7_2D.sfs, saf/POPS/galREF9_vs_cucREF7_2D.sfs, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/longREF9_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF9_vs_cucREF7.fstIndex.done, saf/POPS/2pops/longREF7_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF7_vs_cucREF7.fstIndex.done, saf/POPS/2pops/galREF9_vs_cucREF7.fstIndex.done, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz
+    jobid: 0
+    reason: Input files updated by another job: saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz
+    resources: mem_mb=1000, mem_mib=954, disk_mb=3732, disk_mib=3560, tmpdir=/tmp, partition=std, walltime=120:00:00
+
+[Sun Apr 30 21:21:38 2023]
+Finished job 0.
+12 of 12 steps (100%) done
+Complete log: .snakemake/log/2023-04-30T212022.143986.snakemake.log

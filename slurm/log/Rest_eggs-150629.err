@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+get_mafs_POP_random10fixed        3              2              2
+total                             4              1              2
+
+Select jobs to execute...
+
+[Wed May  3 18:04:00 2023]
+Job 95:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: mafs/PRE_long_LC_10random_fixed_fst_outliers.mafs.done
+
+
+    angsd -b list/saf/PRE_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out mafs/PRE_long_LC_10random_fixed_fst_outliers -doSaf 1 -GL 2 -doGlf 2 -doMaf 1 -doMajorMinor 3 -doPost 1 -doBcf 1 -doCounts 1 -doDepth 1 -dumpCounts 1 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -sites list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.tsv -rf list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.chr 2> log/mafs/PRE_long_LC_10random_fixed_fst_outliers.mafs.log
+    
+Submitted job 95 with external jobid 'Submitted batch job 150632'.
+
+[Wed May  3 18:04:00 2023]
+Job 96:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: mafs/ALL_gal_LC_10random_fixed_fst_outliers.mafs.done
+
+
+    angsd -b list/saf/ALL_gal_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out mafs/ALL_gal_LC_10random_fixed_fst_outliers -doSaf 1 -GL 2 -doGlf 2 -doMaf 1 -doMajorMinor 3 -doPost 1 -doBcf 1 -doCounts 1 -doDepth 1 -dumpCounts 1 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -sites list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.tsv -rf list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.chr 2> log/mafs/ALL_gal_LC_10random_fixed_fst_outliers.mafs.log
+    
+Submitted job 96 with external jobid 'Submitted batch job 150633'.
+
+[Wed May  3 18:04:00 2023]
+Job 97:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: mafs/PEL_long_LC_10random_fixed_fst_outliers.mafs.done
+
+
+    angsd -b list/saf/PEL_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out mafs/PEL_long_LC_10random_fixed_fst_outliers -doSaf 1 -GL 2 -doGlf 2 -doMaf 1 -doMajorMinor 3 -doPost 1 -doBcf 1 -doCounts 1 -doDepth 1 -dumpCounts 1 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -sites list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.tsv -rf list/mafs/PRE_long_LC_vs_PEL_long_LC_10random_fixed_fst_outliers_sorted.chr 2> log/mafs/PEL_long_LC_10random_fixed_fst_outliers.mafs.log
+    
+Submitted job 97 with external jobid 'Submitted batch job 150634'.
+[Wed May  3 19:22:02 2023]
+Finished job 95.
+1 of 4 steps (25%) done
+[Wed May  3 19:37:51 2023]
+Finished job 97.
+2 of 4 steps (50%) done
+[Thu May  4 01:14:02 2023]
+Finished job 96.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Thu May  4 01:14:02 2023]
+localrule all:
+    input: saf/POPS/ALL_gal_LC_100_100_5343.GL2.saf.idx.done, saf/POPS/cucREF7_7_7_284.GL2.saf.idx.done, saf/POPS/curvirostris_8_8_82.GL2.saf.idx.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.saf.idx.done, saf/POPS/galREF9_9_9_467.GL2.saf.idx.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.saf.idx.done, saf/POPS/longREF7_7_7_317.GL2.saf.idx.done, saf/POPS/longREF9_9_9_393.GL2.saf.idx.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done, saf/POPS/PEL_long_LC_17_17_480.GL2.saf.idx.done, saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.1D.sfs, saf/POPS/cucREF7_7_7_284.GL2.1D.sfs, saf/POPS/curvirostris_8_8_82.GL2.1D.sfs, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.1D.sfs, saf/POPS/galREF9_9_9_467.GL2.1D.sfs, saf/POPS/hatched_gal_LC_22_22_1161.GL2.1D.sfs, saf/POPS/longREF7_7_7_317.GL2.1D.sfs, saf/POPS/longREF9_9_9_393.GL2.1D.sfs, saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs, saf/POPS/PEL_long_LC_17_17_480.GL2.1D.sfs, saf/POPS/PRE_long_LC_8_8_276.GL2.1D.sfs, saf/POPS/ALL_gal_LC_100_100_5343.GL2.sfs2theta.done, saf/POPS/cucREF7_7_7_284.GL2.sfs2theta.done, saf/POPS/curvirostris_8_8_82.GL2.sfs2theta.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.sfs2theta.done, saf/POPS/galREF9_9_9_467.GL2.sfs2theta.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.sfs2theta.done, saf/POPS/longREF7_7_7_317.GL2.sfs2theta.done, saf/POPS/longREF9_9_9_393.GL2.sfs2theta.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done, saf/POPS/PEL_long_LC_17_17_480.GL2.sfs2theta.done, saf/POPS/PRE_long_LC_8_8_276.GL2.sfs2theta.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_chrom.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_chrom.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_chrom.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_chrom.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_chrom.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_chrom.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_chrom.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_chrom.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_chrom.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_chrom.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_Window10kb.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_Window10kb.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_Window10kb.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_Window10kb.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_Window10kb.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_Window10kb.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_Window10kb.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/longREF9_vs_galREF9_2D.sfs, saf/POPS/longREF9_vs_cucREF7_2D.sfs, saf/POPS/longREF7_vs_galREF9_2D.sfs, saf/POPS/longREF7_vs_cucREF7_2D.sfs, saf/POPS/galREF9_vs_cucREF7_2D.sfs, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/longREF9_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF9_vs_cucREF7.fstIndex.done, saf/POPS/2pops/longREF7_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF7_vs_cucREF7.fstIndex.done, saf/POPS/2pops/galREF9_vs_cucREF7.fstIndex.done, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, mafs/PRE_long_LC_10random_fixed_fst_outliers.mafs.done, mafs/ALL_gal_LC_10random_fixed_fst_outliers.mafs.done, mafs/PEL_long_LC_10random_fixed_fst_outliers.mafs.done
+    jobid: 0
+    reason: Input files updated by another job: mafs/PRE_long_LC_10random_fixed_fst_outliers.mafs.done, mafs/ALL_gal_LC_10random_fixed_fst_outliers.mafs.done, mafs/PEL_long_LC_10random_fixed_fst_outliers.mafs.done
+    resources: mem_mb=1000, mem_mib=954, disk_mb=4095, disk_mib=3906, tmpdir=/tmp, partition=std, walltime=120:00:00
+
+[Thu May  4 01:14:02 2023]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2023-05-03T180359.185712.snakemake.log

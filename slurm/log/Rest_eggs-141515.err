@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+angsd_SAF_POP        1             12             12
+total                2              1             12
+
+Select jobs to execute...
+
+[Mon Apr 24 17:34:35 2023]
+Job 1:  Compute site allele frequency likelihood (.saf.idx) for each population using angsd 
+Reason: Missing output files: saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done
+
+
+    angsd -b list/saf/PRE_long_LC.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -anc ref/Dgaleata_M5_PBasm.FINAL.fasta -out saf/POPS/PRE_long_LC_8_8_276.GL2 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -minInd 8 -setMinDepth 8 -setMaxDepth 276 -GL 2 -doCounts 1 -doSaf 1 2> log/saf_POPS/PRE_long_LC_8_8_276.GL2.saf.idx.log
+    
+Submitted job 1 with external jobid 'Submitted batch job 141516'.
+[Mon Apr 24 17:51:56 2023]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Mon Apr 24 17:51:56 2023]
+localrule all:
+    input: saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done
+    jobid: 0
+    reason: Input files updated by another job: saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/tmp, partition=std, walltime=120:00:00
+
+[Mon Apr 24 17:51:56 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-04-24T173434.744261.snakemake.log

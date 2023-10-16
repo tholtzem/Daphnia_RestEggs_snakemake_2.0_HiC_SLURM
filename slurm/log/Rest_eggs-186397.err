@@ -1,0 +1,284 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+Fst_global_3pops            1              2              2
+Fst_index_3pops             1              4              4
+Fst_windows_3pops           3              2              2
+all                         1              1              1
+get_bcf                     1              2              2
+twodsfs_folded_sites       11              2              2
+total                      18              1              4
+
+Select jobs to execute...
+
+[Tue May 30 09:33:02 2023]
+Job 32:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/longREF7*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs.log
+    
+Submitted job 32 with external jobid 'Submitted batch job 186398'.
+
+[Tue May 30 09:33:03 2023]
+Job 33:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/galREF9*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs.log
+    
+Submitted job 33 with external jobid 'Submitted batch job 186399'.
+
+[Tue May 30 09:33:03 2023]
+Job 25:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs.log
+    
+Submitted job 25 with external jobid 'Submitted batch job 186400'.
+
+[Tue May 30 09:33:03 2023]
+Job 23:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs.log
+    
+Submitted job 23 with external jobid 'Submitted batch job 186401'.
+
+[Tue May 30 09:33:03 2023]
+Job 27:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+Submitted job 27 with external jobid 'Submitted batch job 186402'.
+
+[Tue May 30 09:33:03 2023]
+Job 29:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/longREF9_vs_galREF9.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/longREF9*.GL2.sites.saf.idx saf/POPS/sites/galREF9*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF9_vs_galREF9.sites.2D.sfs 2> log/saf_POPS/sites/longREF9_vs_galREF9.sites.2D.sfs.log
+    
+Submitted job 29 with external jobid 'Submitted batch job 186403'.
+
+[Tue May 30 09:33:03 2023]
+Job 31:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/longREF7_vs_galREF9.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/longREF7*.GL2.sites.saf.idx saf/POPS/sites/galREF9*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF7_vs_galREF9.sites.2D.sfs 2> log/saf_POPS/sites/longREF7_vs_galREF9.sites.2D.sfs.log
+    
+Submitted job 31 with external jobid 'Submitted batch job 186404'.
+
+[Tue May 30 09:33:03 2023]
+Job 39:  Call genotypes from realigned bam files using estimated allele frequencies from genotype likelihoods as a prior and output in bcf format 
+Reason: Missing output files: ancestry/LC/data/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.done
+
+
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -b list/LC_realignedBAM_df1.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051 -GL 2 -doPost 1 -doMajorMinor 3 -doMaf 1 -doBcf 1 --ignore-RG 0 -doGeno 1 -doCounts 1 -geno_minDepth 10 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/LC/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.log
+    
+Submitted job 39 with external jobid 'Submitted batch job 186405'.
+
+[Tue May 30 09:33:03 2023]
+Job 24:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+Submitted job 24 with external jobid 'Submitted batch job 186406'.
+
+[Tue May 30 09:33:03 2023]
+Job 26:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs 2> log/saf_POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs.log
+    
+Submitted job 26 with external jobid 'Submitted batch job 186407'.
+
+[Tue May 30 09:33:03 2023]
+Job 28:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+Submitted job 28 with external jobid 'Submitted batch job 186408'.
+
+[Tue May 30 09:33:03 2023]
+Job 30:  Optimize .saf.idx and calculate all pairwise 2dsfs's (joint site frequency spectra) using realSFS and fold for FST 
+Reason: Missing output files: saf/POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs
+
+ 
+    realSFS saf/POPS/sites/longREF9*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs.log
+    
+Submitted job 30 with external jobid 'Submitted batch job 186409'.
+[Tue May 30 09:33:33 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 32
+    output: saf/POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs
+    log: log/saf_POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/longREF7*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186398
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 32, external: Submitted batch job 186398, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.32.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:34 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 33
+    output: saf/POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs
+    log: log/saf_POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/galREF9*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186399
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 33, external: Submitted batch job 186399, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.33.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:35 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 25
+    output: saf/POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186400
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 25, external: Submitted batch job 186400, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:36 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 23
+    output: saf/POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186401
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 23, external: Submitted batch job 186401, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:37 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 27
+    output: saf/POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186402
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 27, external: Submitted batch job 186402, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:38 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 29
+    output: saf/POPS/sites/longREF9_vs_galREF9.sites.2D.sfs
+    log: log/saf_POPS/sites/longREF9_vs_galREF9.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/longREF9*.GL2.sites.saf.idx saf/POPS/sites/galREF9*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF9_vs_galREF9.sites.2D.sfs 2> log/saf_POPS/sites/longREF9_vs_galREF9.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186403
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 29, external: Submitted batch job 186403, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.29.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:39 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 31
+    output: saf/POPS/sites/longREF7_vs_galREF9.sites.2D.sfs
+    log: log/saf_POPS/sites/longREF7_vs_galREF9.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/longREF7*.GL2.sites.saf.idx saf/POPS/sites/galREF9*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF7_vs_galREF9.sites.2D.sfs 2> log/saf_POPS/sites/longREF7_vs_galREF9.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186404
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 31, external: Submitted batch job 186404, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.31.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:41 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 24
+    output: saf/POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/PRE_long_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186406
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 24, external: Submitted batch job 186406, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.24.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:42 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 26
+    output: saf/POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_long_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs 2> log/saf_POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186407
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 26, external: Submitted batch job 186407, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:43 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 28
+    output: saf/POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs
+    log: log/saf_POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/ALL_gal_LC*.GL2.sites.saf.idx saf/POPS/sites/PEL_cuc_LC*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs 2> log/saf_POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186408
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 28, external: Submitted batch job 186408, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.28.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue May 30 09:33:44 2023]
+Error in rule twodsfs_folded_sites:
+    jobid: 30
+    output: saf/POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs
+    log: log/saf_POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs.log (check log file(s) for error details)
+    shell:
+         
+    realSFS saf/POPS/sites/longREF9*.GL2.sites.saf.idx saf/POPS/sites/cucREF7*.GL2.sites.saf.idx -fold 1 > saf/POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs 2> log/saf_POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186409
+
+Error executing rule twodsfs_folded_sites on cluster (jobid: 30, external: Submitted batch job 186409, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.twodsfs_folded_sites.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed May 31 16:31:27 2023]
+Error in rule get_bcf:
+    jobid: 39
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta, list/LC_realignedBAM_df1.list, list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list, list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr
+    output: ancestry/LC/data/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.done
+    log: log/LC/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.log (check log file(s) for error details)
+    shell:
+        
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -b list/LC_realignedBAM_df1.list -ref ref/Dgaleata_M5_PBasm.FINAL.fasta -out ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051 -GL 2 -doPost 1 -doMajorMinor 3 -doMaf 1 -doBcf 1 --ignore-RG 0 -doGeno 1 -doCounts 1 -geno_minDepth 10 -sites list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list -rf list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr 2> log/LC/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 186405
+
+Error executing rule get_bcf on cluster (jobid: 39, external: Submitted batch job 186405, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC_SLURM/.snakemake/tmp.2fo2a4yj/snakejob.get_bcf.39.sh). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-05-30T093301.033868.snakemake.log

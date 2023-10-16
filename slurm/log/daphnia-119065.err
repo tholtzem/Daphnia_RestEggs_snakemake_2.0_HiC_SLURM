@@ -1,0 +1,2773 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+all                          1              1              1
+bcftools_mpileup_call      120             24             24
+total                      121              1             24
+
+Select jobs to execute...
+
+[Sat Apr  1 00:16:57 2023]
+Job 72: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_6.bcf.log
+    
+Submitted job 72 with external jobid 'Submitted batch job 119066'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 16: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_2.bcf.log
+    
+Submitted job 16 with external jobid 'Submitted batch job 119067'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 101: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_9.bcf.log
+    
+Submitted job 101 with external jobid 'Submitted batch job 119068'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 45: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_4.bcf.log
+    
+Submitted job 45 with external jobid 'Submitted batch job 119069'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 73: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_7.bcf.log
+    
+Submitted job 73 with external jobid 'Submitted batch job 119070'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 17: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_2.bcf.log
+    
+Submitted job 17 with external jobid 'Submitted batch job 119071'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 46: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_4.bcf.log
+    
+Submitted job 46 with external jobid 'Submitted batch job 119072'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 102: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_9.bcf.log
+    
+Submitted job 102 with external jobid 'Submitted batch job 119073'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 18: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_2.bcf.log
+    
+Submitted job 18 with external jobid 'Submitted batch job 119074'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 74: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_7.bcf.log
+    
+Submitted job 74 with external jobid 'Submitted batch job 119075'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 47: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_4.bcf.log
+    
+Submitted job 47 with external jobid 'Submitted batch job 119076'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 103: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf.log
+    
+Submitted job 103 with external jobid 'Submitted batch job 119077'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 75: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_7.bcf.log
+    
+Submitted job 75 with external jobid 'Submitted batch job 119078'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 19: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf.log
+    
+Submitted job 19 with external jobid 'Submitted batch job 119079'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 48: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_4.bcf.log
+    
+Submitted job 48 with external jobid 'Submitted batch job 119080'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 104: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_9.bcf.log
+    
+Submitted job 104 with external jobid 'Submitted batch job 119081'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 20: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_2.bcf.log
+    
+Submitted job 20 with external jobid 'Submitted batch job 119082'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 76: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_7.bcf.log
+    
+Submitted job 76 with external jobid 'Submitted batch job 119083'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 49: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_5.bcf.log
+    
+Submitted job 49 with external jobid 'Submitted batch job 119084'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 105: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_9.bcf.log
+    
+Submitted job 105 with external jobid 'Submitted batch job 119085'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 21: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_2.bcf.log
+    
+Submitted job 21 with external jobid 'Submitted batch job 119086'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 77: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_7.bcf.log
+    
+Submitted job 77 with external jobid 'Submitted batch job 119087'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 50: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_5.bcf.log
+    
+Submitted job 50 with external jobid 'Submitted batch job 119088'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 106: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_9.bcf.log
+    
+Submitted job 106 with external jobid 'Submitted batch job 119089'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 22: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_2.bcf.log
+    
+Submitted job 22 with external jobid 'Submitted batch job 119090'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 78: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_7.bcf.log
+    
+Submitted job 78 with external jobid 'Submitted batch job 119091'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 107: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_9.bcf.log
+    
+Submitted job 107 with external jobid 'Submitted batch job 119092'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 51: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_5.bcf.log
+    
+Submitted job 51 with external jobid 'Submitted batch job 119093'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 23: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_2.bcf.log
+    
+Submitted job 23 with external jobid 'Submitted batch job 119094'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 79: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf.log
+    
+Submitted job 79 with external jobid 'Submitted batch job 119095'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 52: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_5.bcf.log
+    
+Submitted job 52 with external jobid 'Submitted batch job 119096'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 108: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_9.bcf.log
+    
+Submitted job 108 with external jobid 'Submitted batch job 119097'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 24: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_2.bcf.log
+    
+Submitted job 24 with external jobid 'Submitted batch job 119098'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 80: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_7.bcf.log
+    
+Submitted job 80 with external jobid 'Submitted batch job 119099'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 53: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_5.bcf.log
+    
+Submitted job 53 with external jobid 'Submitted batch job 119100'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 109: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_10.bcf.log
+    
+Submitted job 109 with external jobid 'Submitted batch job 119101'.
+
+[Sat Apr  1 00:16:58 2023]
+Job 25: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_3.bcf.log
+    
+Submitted job 25 with external jobid 'Submitted batch job 119102'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 81: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_7.bcf.log
+    
+Submitted job 81 with external jobid 'Submitted batch job 119103'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 54: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_5.bcf.log
+    
+Submitted job 54 with external jobid 'Submitted batch job 119104'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 110: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_10.bcf.log
+    
+Submitted job 110 with external jobid 'Submitted batch job 119105'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 26: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_3.bcf.log
+    
+Submitted job 26 with external jobid 'Submitted batch job 119106'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 82: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_7.bcf.log
+    
+Submitted job 82 with external jobid 'Submitted batch job 119107'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 1: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_1.bcf.log
+    
+Submitted job 1 with external jobid 'Submitted batch job 119108'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 55: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf.log
+    
+Submitted job 55 with external jobid 'Submitted batch job 119109'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 111: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_10.bcf.log
+    
+Submitted job 111 with external jobid 'Submitted batch job 119110'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 27: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_3.bcf.log
+    
+Submitted job 27 with external jobid 'Submitted batch job 119111'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 83: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_7.bcf.log
+    
+Submitted job 83 with external jobid 'Submitted batch job 119112'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 56: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_5.bcf.log
+    
+Submitted job 56 with external jobid 'Submitted batch job 119113'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 112: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_10.bcf.log
+    
+Submitted job 112 with external jobid 'Submitted batch job 119114'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 28: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_3.bcf.log
+    
+Submitted job 28 with external jobid 'Submitted batch job 119115'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 84: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_7.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_7.bcf.log
+    
+Submitted job 84 with external jobid 'Submitted batch job 119116'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 57: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_5.bcf.log
+    
+Submitted job 57 with external jobid 'Submitted batch job 119117'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 113: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_10.bcf.log
+    
+Submitted job 113 with external jobid 'Submitted batch job 119118'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 29: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_3.bcf.log
+    
+Submitted job 29 with external jobid 'Submitted batch job 119119'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 85: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_8.bcf.log
+    
+Submitted job 85 with external jobid 'Submitted batch job 119120'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 2: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_1.bcf.log
+    
+Submitted job 2 with external jobid 'Submitted batch job 119121'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 114: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_10.bcf.log
+    
+Submitted job 114 with external jobid 'Submitted batch job 119122'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 58: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_5.bcf.log
+    
+Submitted job 58 with external jobid 'Submitted batch job 119123'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 30: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_3.bcf.log
+    
+Submitted job 30 with external jobid 'Submitted batch job 119124'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 86: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_8.bcf.log
+    
+Submitted job 86 with external jobid 'Submitted batch job 119125'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 3: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_1.bcf.log
+    
+Submitted job 3 with external jobid 'Submitted batch job 119126'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 59: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_5.bcf.log
+    
+Submitted job 59 with external jobid 'Submitted batch job 119127'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 115: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf.log
+    
+Submitted job 115 with external jobid 'Submitted batch job 119128'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 31: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf.log
+    
+Submitted job 31 with external jobid 'Submitted batch job 119129'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 87: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_8.bcf.log
+    
+Submitted job 87 with external jobid 'Submitted batch job 119130'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 12: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_1.bcf.log
+    
+Submitted job 12 with external jobid 'Submitted batch job 119131'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 60: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_5.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_5.bcf.log
+    
+Submitted job 60 with external jobid 'Submitted batch job 119132'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 116: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_10.bcf.log
+    
+Submitted job 116 with external jobid 'Submitted batch job 119133'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 44: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_4.bcf.log
+    
+Submitted job 44 with external jobid 'Submitted batch job 119134'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 32: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_3.bcf.log
+    
+Submitted job 32 with external jobid 'Submitted batch job 119135'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 88: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_8.bcf.log
+    
+Submitted job 88 with external jobid 'Submitted batch job 119136'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 4: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_1.bcf.log
+    
+Submitted job 4 with external jobid 'Submitted batch job 119137'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 61: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_6.bcf.log
+    
+Submitted job 61 with external jobid 'Submitted batch job 119138'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 117: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_10.bcf.log
+    
+Submitted job 117 with external jobid 'Submitted batch job 119139'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 33: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_3.bcf.log
+    
+Submitted job 33 with external jobid 'Submitted batch job 119140'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 89: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_8.bcf.log
+    
+Submitted job 89 with external jobid 'Submitted batch job 119141'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 5: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_1.bcf.log
+    
+Submitted job 5 with external jobid 'Submitted batch job 119142'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 62: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_6.bcf.log
+    
+Submitted job 62 with external jobid 'Submitted batch job 119143'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 118: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_10.bcf.log
+    
+Submitted job 118 with external jobid 'Submitted batch job 119144'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 34: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_3.bcf.log
+    
+Submitted job 34 with external jobid 'Submitted batch job 119145'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 90: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_8.bcf.log
+    
+Submitted job 90 with external jobid 'Submitted batch job 119146'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 13: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_2.bcf.log
+    
+Submitted job 13 with external jobid 'Submitted batch job 119147'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 63: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_6.bcf.log
+    
+Submitted job 63 with external jobid 'Submitted batch job 119148'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 119: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_10.bcf.log
+    
+Submitted job 119 with external jobid 'Submitted batch job 119149'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 35: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_3.bcf.log
+    
+Submitted job 35 with external jobid 'Submitted batch job 119150'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 91: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf.log
+    
+Submitted job 91 with external jobid 'Submitted batch job 119151'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 11: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_1.bcf.log
+    
+Submitted job 11 with external jobid 'Submitted batch job 119152'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 64: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_6.bcf.log
+    
+Submitted job 64 with external jobid 'Submitted batch job 119153'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 120: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_10.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_10.bcf.log
+    
+Submitted job 120 with external jobid 'Submitted batch job 119154'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 36: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_3.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_3.bcf.log
+    
+Submitted job 36 with external jobid 'Submitted batch job 119155'.
+
+[Sat Apr  1 00:16:59 2023]
+Job 92: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_8.bcf.log
+    
+Submitted job 92 with external jobid 'Submitted batch job 119156'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 65: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_6.bcf.log
+    
+Submitted job 65 with external jobid 'Submitted batch job 119157'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 6: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_1.bcf.log
+    
+Submitted job 6 with external jobid 'Submitted batch job 119158'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 37: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_4.bcf.log
+    
+Submitted job 37 with external jobid 'Submitted batch job 119159'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 93: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_8.bcf.log
+    
+Submitted job 93 with external jobid 'Submitted batch job 119160'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 7: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf.log
+    
+Submitted job 7 with external jobid 'Submitted batch job 119161'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 66: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_6.bcf.log
+    
+Submitted job 66 with external jobid 'Submitted batch job 119162'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 38: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_4.bcf.log
+    
+Submitted job 38 with external jobid 'Submitted batch job 119163'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 94: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_8.bcf.log
+    
+Submitted job 94 with external jobid 'Submitted batch job 119164'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 8: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_1.bcf.log
+    
+Submitted job 8 with external jobid 'Submitted batch job 119165'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 67: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf.log
+    
+Submitted job 67 with external jobid 'Submitted batch job 119166'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 39: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_4.bcf.log
+    
+Submitted job 39 with external jobid 'Submitted batch job 119167'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 95: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_8.bcf.log
+    
+Submitted job 95 with external jobid 'Submitted batch job 119168'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 9: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_1.bcf.log
+    
+Submitted job 9 with external jobid 'Submitted batch job 119169'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 68: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispina_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_6.bcf.log
+    
+Submitted job 68 with external jobid 'Submitted batch job 119170'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 40: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_4.bcf.log
+    
+Submitted job 40 with external jobid 'Submitted batch job 119171'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 96: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_zschokkei_HiC_scaffold_8.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_8.bcf.log
+    
+Submitted job 96 with external jobid 'Submitted batch job 119172'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 10: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_1.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_1.bcf.log
+    
+Submitted job 10 with external jobid 'Submitted batch job 119173'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 69: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_mendotae_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_6.bcf.log
+    
+Submitted job 69 with external jobid 'Submitted batch job 119174'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 41: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_Greifensee_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_4.bcf.log
+    
+Submitted job 41 with external jobid 'Submitted batch job 119175'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 97: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_cucullata_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_9.bcf.log
+    
+Submitted job 97 with external jobid 'Submitted batch job 119176'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 14: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_2.bcf.log
+    
+Submitted job 14 with external jobid 'Submitted batch job 119177'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 70: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_tanakai_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_6.bcf.log
+    
+Submitted job 70 with external jobid 'Submitted batch job 119178'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 42: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_lacustris_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_4.bcf.log
+    
+Submitted job 42 with external jobid 'Submitted batch job 119179'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 98: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_curvirostris_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_9.bcf.log
+    
+Submitted job 98 with external jobid 'Submitted batch job 119180'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 15: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_2.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_2.bcf.log
+    
+Submitted job 15 with external jobid 'Submitted batch job 119181'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 71: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_umbra_HiC_scaffold_6.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_6.bcf.log
+    
+Submitted job 71 with external jobid 'Submitted batch job 119182'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 43: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf.log
+    
+Submitted job 43 with external jobid 'Submitted batch job 119183'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 99: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_dentifera_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_9.bcf.log
+    
+Submitted job 99 with external jobid 'Submitted batch job 119184'.
+
+[Sat Apr  1 00:17:00 2023]
+Job 100: --- Generate AllSites vcf/bcf using BCFtools (mpileup/call) ---
+Reason: Missing output files: bcf/daphnia_init_galeata_HiC_scaffold_9.bcf
+
+
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_9.bcf.log
+    
+Submitted job 100 with external jobid 'Submitted batch job 119185'.
+[Sat Apr  1 00:17:07 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 72
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_6.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119066
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 72, external: Submitted batch job 119066, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.72.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:08 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 16
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_2.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119067
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 16, external: Submitted batch job 119067, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:09 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 101
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_9.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119068
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 101, external: Submitted batch job 119068, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.101.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:10 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 45
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_4.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119069
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 45, external: Submitted batch job 119069, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.45.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:11 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 73
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_7.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119070
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 73, external: Submitted batch job 119070, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.73.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:12 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 17
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_2.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119071
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 17, external: Submitted batch job 119071, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:13 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 46
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_4.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119072
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 46, external: Submitted batch job 119072, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.46.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:14 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 102
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_9.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119073
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 102, external: Submitted batch job 119073, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.102.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:15 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 18
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_2.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119074
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 18, external: Submitted batch job 119074, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:16 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 74
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_7.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119075
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 74, external: Submitted batch job 119075, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.74.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:17 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 47
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_4.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119076
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 47, external: Submitted batch job 119076, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.47.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:18 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 103
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119077
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 103, external: Submitted batch job 119077, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.103.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:19 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 75
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_7.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119078
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 75, external: Submitted batch job 119078, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.75.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:20 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 19
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119079
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 19, external: Submitted batch job 119079, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:21 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 48
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_4.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119080
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 48, external: Submitted batch job 119080, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.48.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:22 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 104
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_9.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119081
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 104, external: Submitted batch job 119081, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.104.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:23 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 20
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_2.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119082
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 20, external: Submitted batch job 119082, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:24 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 76
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_7.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119083
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 76, external: Submitted batch job 119083, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.76.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:25 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 49
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_5.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119084
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 49, external: Submitted batch job 119084, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.49.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:26 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 105
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_9.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119085
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 105, external: Submitted batch job 119085, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.105.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:27 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 21
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_2.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119086
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 21, external: Submitted batch job 119086, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:28 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 77
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_7.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119087
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 77, external: Submitted batch job 119087, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.77.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:29 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 50
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_5.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119088
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 50, external: Submitted batch job 119088, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.50.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:30 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 106
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_9.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119089
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 106, external: Submitted batch job 119089, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.106.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:31 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 22
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_2.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119090
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 22, external: Submitted batch job 119090, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:32 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 78
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_7.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119091
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 78, external: Submitted batch job 119091, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.78.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:33 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 107
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_9.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119092
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 107, external: Submitted batch job 119092, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.107.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:34 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 51
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_5.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119093
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 51, external: Submitted batch job 119093, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.51.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:35 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 23
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_2.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119094
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 23, external: Submitted batch job 119094, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:36 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 79
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119095
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 79, external: Submitted batch job 119095, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.79.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:37 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 52
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_5.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119096
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 52, external: Submitted batch job 119096, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.52.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:38 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 108
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_9.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119097
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 108, external: Submitted batch job 119097, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.108.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:39 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 24
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_2.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119098
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 24, external: Submitted batch job 119098, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.24.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:40 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 80
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_7.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119099
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 80, external: Submitted batch job 119099, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.80.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:41 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 53
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_5.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119100
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 53, external: Submitted batch job 119100, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.53.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:42 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 109
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_10.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119101
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 109, external: Submitted batch job 119101, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.109.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:43 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 25
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_3.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119102
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 25, external: Submitted batch job 119102, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:44 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 81
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_7.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119103
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 81, external: Submitted batch job 119103, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.81.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:45 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 54
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_5.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119104
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 54, external: Submitted batch job 119104, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.54.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:46 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 110
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_10.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119105
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 110, external: Submitted batch job 119105, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.110.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:47 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 26
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_3.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119106
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 26, external: Submitted batch job 119106, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:48 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 82
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_7.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119107
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 82, external: Submitted batch job 119107, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.82.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:49 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 1
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_1.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119108
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 1, external: Submitted batch job 119108, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:50 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 55
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119109
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 55, external: Submitted batch job 119109, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.55.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:51 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 111
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_10.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119110
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 111, external: Submitted batch job 119110, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.111.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:52 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 27
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_3.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119111
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 27, external: Submitted batch job 119111, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:53 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 83
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_7.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119112
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 83, external: Submitted batch job 119112, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.83.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:54 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 56
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_5.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119113
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 56, external: Submitted batch job 119113, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.56.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:55 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 112
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_10.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119114
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 112, external: Submitted batch job 119114, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.112.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:56 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 28
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_3.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119115
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 28, external: Submitted batch job 119115, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.28.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:57 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 84
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_7.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_7.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 7 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_7.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_7.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119116
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 84, external: Submitted batch job 119116, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.84.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:58 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 57
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_5.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119117
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 57, external: Submitted batch job 119117, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.57.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:17:59 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 113
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_10.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119118
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 113, external: Submitted batch job 119118, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.113.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:00 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 29
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_3.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119119
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 29, external: Submitted batch job 119119, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.29.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:01 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 85
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_8.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119120
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 85, external: Submitted batch job 119120, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.85.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:02 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 2
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_1.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119121
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 2, external: Submitted batch job 119121, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:03 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 114
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_10.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119122
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 114, external: Submitted batch job 119122, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.114.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:04 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 58
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_5.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119123
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 58, external: Submitted batch job 119123, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.58.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:05 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 30
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_3.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119124
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 30, external: Submitted batch job 119124, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:06 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 86
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_8.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119125
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 86, external: Submitted batch job 119125, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.86.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:07 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 3
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_1.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119126
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 3, external: Submitted batch job 119126, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:08 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 59
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_5.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119127
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 59, external: Submitted batch job 119127, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.59.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:09 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 115
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119128
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 115, external: Submitted batch job 119128, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.115.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:10 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 31
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119129
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 31, external: Submitted batch job 119129, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.31.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:11 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 87
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_8.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119130
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 87, external: Submitted batch job 119130, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.87.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:12 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 12
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_1.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119131
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 12, external: Submitted batch job 119131, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:13 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 60
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_5.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_5.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 5 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_5.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_5.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119132
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 60, external: Submitted batch job 119132, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.60.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:14 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 116
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_10.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119133
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 116, external: Submitted batch job 119133, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.116.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:15 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 44
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_4.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119134
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 44, external: Submitted batch job 119134, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.44.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:16 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 32
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_3.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119135
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 32, external: Submitted batch job 119135, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.32.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:17 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 88
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_8.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119136
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 88, external: Submitted batch job 119136, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.88.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:18 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 4
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_1.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119137
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 4, external: Submitted batch job 119137, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:19 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 61
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_6.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119138
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 61, external: Submitted batch job 119138, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.61.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:20 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 117
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_10.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119139
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 117, external: Submitted batch job 119139, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.117.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:21 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 33
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_3.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119140
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 33, external: Submitted batch job 119140, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.33.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:22 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 89
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_8.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119141
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 89, external: Submitted batch job 119141, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.89.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:23 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 5
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_1.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119142
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 5, external: Submitted batch job 119142, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:24 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 62
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_6.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119143
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 62, external: Submitted batch job 119143, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.62.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:25 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 118
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_10.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119144
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 118, external: Submitted batch job 119144, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.118.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:26 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 34
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_3.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119145
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 34, external: Submitted batch job 119145, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.34.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:27 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 90
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_8.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119146
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 90, external: Submitted batch job 119146, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.90.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:28 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 13
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_2.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119147
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 13, external: Submitted batch job 119147, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:29 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 63
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_6.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119148
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 63, external: Submitted batch job 119148, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.63.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:30 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 119
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_10.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119149
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 119, external: Submitted batch job 119149, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.119.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:31 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 35
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_3.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119150
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 35, external: Submitted batch job 119150, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.35.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:32 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 91
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119151
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 91, external: Submitted batch job 119151, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.91.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:33 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 11
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_1.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119152
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 11, external: Submitted batch job 119152, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:34 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 64
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_6.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119153
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 64, external: Submitted batch job 119153, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.64.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:35 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 120
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_10.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_10.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 10 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_10.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_10.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119154
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 120, external: Submitted batch job 119154, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.120.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:36 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 36
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_3.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_3.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 3 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_3.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_3.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119155
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 36, external: Submitted batch job 119155, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.36.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:37 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 92
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_8.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119156
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 92, external: Submitted batch job 119156, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.92.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:38 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 65
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_6.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119157
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 65, external: Submitted batch job 119157, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.65.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:39 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 6
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_1.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119158
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 6, external: Submitted batch job 119158, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:40 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 37
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_4.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119159
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 37, external: Submitted batch job 119159, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.37.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:41 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 93
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_8.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119160
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 93, external: Submitted batch job 119160, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.93.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:42 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 7
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119161
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 7, external: Submitted batch job 119161, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:43 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 66
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_6.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119162
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 66, external: Submitted batch job 119162, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.66.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:44 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 38
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_4.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119163
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 38, external: Submitted batch job 119163, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.38.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:45 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 94
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_8.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119164
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 94, external: Submitted batch job 119164, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.94.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:46 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 8
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_1.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119165
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 8, external: Submitted batch job 119165, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:47 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 67
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119166
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 67, external: Submitted batch job 119166, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.67.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:48 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 39
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_4.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119167
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 39, external: Submitted batch job 119167, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.39.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:49 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 95
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_8.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119168
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 95, external: Submitted batch job 119168, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.95.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:50 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 9
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_1.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119169
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 9, external: Submitted batch job 119169, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:51 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 68
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispina_HiC_scaffold_6.bcf
+    log: log/daphnia_init_longispina_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispina_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispina_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_longispina_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119170
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 68, external: Submitted batch job 119170, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.68.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:52 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 40
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_4.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119171
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 40, external: Submitted batch job 119171, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.40.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:53 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 96
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_zschokkei_HiC_scaffold_8.bcf
+    log: log/daphnia_init_zschokkei_HiC_scaffold_8.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_zschokkei_HiC_scaffold.list -r 8 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_zschokkei_HiC_scaffold_8.bcf --threads 24 2> log/daphnia_init_zschokkei_HiC_scaffold_8.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119172
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 96, external: Submitted batch job 119172, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.96.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:54 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 10
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_1.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_1.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 1 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_1.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_1.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119173
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 10, external: Submitted batch job 119173, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:55 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 69
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_mendotae_HiC_scaffold_6.bcf
+    log: log/daphnia_init_mendotae_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_mendotae_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_mendotae_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_mendotae_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119174
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 69, external: Submitted batch job 119174, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.69.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:56 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 41
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_Greifensee_HiC_scaffold_4.bcf
+    log: log/daphnia_init_Greifensee_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_Greifensee_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_Greifensee_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_Greifensee_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119175
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 41, external: Submitted batch job 119175, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.41.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:57 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 97
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_cucullata_HiC_scaffold_9.bcf
+    log: log/daphnia_init_cucullata_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_cucullata_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_cucullata_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_cucullata_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119176
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 97, external: Submitted batch job 119176, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.97.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:58 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 14
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_2.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119177
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 14, external: Submitted batch job 119177, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:18:59 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 70
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_tanakai_HiC_scaffold_6.bcf
+    log: log/daphnia_init_tanakai_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_tanakai_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_tanakai_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_tanakai_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119178
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 70, external: Submitted batch job 119178, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.70.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:00 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 42
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_lacustris_HiC_scaffold_4.bcf
+    log: log/daphnia_init_lacustris_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_lacustris_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_lacustris_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_lacustris_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119179
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 42, external: Submitted batch job 119179, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.42.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:01 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 98
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_curvirostris_HiC_scaffold_9.bcf
+    log: log/daphnia_init_curvirostris_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_curvirostris_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_curvirostris_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_curvirostris_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119180
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 98, external: Submitted batch job 119180, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.98.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:02 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 15
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_2.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_2.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 2 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_2.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_2.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119181
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 15, external: Submitted batch job 119181, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:03 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 71
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_umbra_HiC_scaffold_6.bcf
+    log: log/daphnia_init_umbra_HiC_scaffold_6.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_umbra_HiC_scaffold.list -r 6 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_umbra_HiC_scaffold_6.bcf --threads 24 2> log/daphnia_init_umbra_HiC_scaffold_6.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119182
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 71, external: Submitted batch job 119182, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.71.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:04 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 43
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf
+    log: log/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_longispinaFIN_HiC_scaffold.list -r 4 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf --threads 24 2> log/daphnia_init_longispinaFIN_HiC_scaffold_4.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119183
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 43, external: Submitted batch job 119183, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.43.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:05 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 99
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_dentifera_HiC_scaffold_9.bcf
+    log: log/daphnia_init_dentifera_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_dentifera_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_dentifera_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_dentifera_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119184
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 99, external: Submitted batch job 119184, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.99.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Apr  1 00:19:06 2023]
+Error in rule bcftools_mpileup_call:
+    jobid: 100
+    input: ref/Dgaleata_M5_PBasm.FINAL.fasta
+    output: bcf/daphnia_init_galeata_HiC_scaffold_9.bcf
+    log: log/daphnia_init_galeata_HiC_scaffold_9.bcf.log (check log file(s) for error details)
+    shell:
+        
+    bcftools mpileup -Ou -f ref/Dgaleata_M5_PBasm.FINAL.fasta -b list/realignedBAM_galeata_HiC_scaffold.list -r 9 -a AD,DP,SP --threads 24 | bcftools call -m -Ob -f GQ -o bcf/daphnia_init_galeata_HiC_scaffold_9.bcf --threads 24 2> log/daphnia_init_galeata_HiC_scaffold_9.bcf.log
+    
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Submitted batch job 119185
+
+Error executing rule bcftools_mpileup_call on cluster (jobid: 100, external: Submitted batch job 119185, jobscript: /gpfs/gpfs1/scratch/c7701178/mach2/DAPHNIA/daphnia_snakemake_SLURM/.snakemake/tmp.psfc3nu2/snakejob.bcftools_mpileup_call.100.sh). For error details see the cluster log and the log files of the involved rule(s).
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-04-01T001656.000696.snakemake.log

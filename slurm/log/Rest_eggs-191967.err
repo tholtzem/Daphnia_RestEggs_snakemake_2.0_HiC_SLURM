@@ -1,0 +1,81 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 5000
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+filter_genotype_DP        1              2              2
+hardfilter_vcf            1              2              2
+imiss                     1              2              2
+plot_imiss                1              2              2
+total                     5              1              2
+
+Select jobs to execute...
+
+[Tue Jun  6 11:06:54 2023]
+Job 64:  Filter average site-level (maxDepth) 
+Reason: Missing output files: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.nbrSites.txt
+
+
+    bcftools filter -i 'INFO/DP<6903' -Oz -o ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.vcf.gz &&
+    bcftools view -H ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz | wc -l > ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.nbrSites.txt 2> log/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.log
+    
+Submitted job 64 with external jobid 'Submitted batch job 191968'.
+[Tue Jun  6 11:12:25 2023]
+Finished job 64.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Tue Jun  6 11:12:25 2023]
+Job 65:  --- Filter VCF for individual genotypes for read depth --- 
+Reason: Missing output files: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt; Input files updated by another job: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz
+
+
+    bcftools filter -S . -e 'FMT/DP<10' -Oz -o ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz &&
+    bcftools view -H ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz | wc -l > ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt 2> log/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.log
+    
+Submitted job 65 with external jobid 'Submitted batch job 191971'.
+[Tue Jun  6 11:17:55 2023]
+Finished job 65.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Tue Jun  6 11:17:55 2023]
+Job 66:  --- Identify individuals with a high amount of missing data --- 
+Reason: Missing output files: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss; Input files updated by another job: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz
+
+
+    bcftools stats -s - ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz | grep -E ^PSC | cut -f3,14 > ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss 2> log/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.log
+    
+Submitted job 66 with external jobid 'Submitted batch job 191972'.
+[Tue Jun  6 11:19:15 2023]
+Finished job 66.
+3 of 5 steps (60%) done
+Select jobs to execute...
+
+[Tue Jun  6 11:19:15 2023]
+Job 67: --- Identify individuals with a high amount of missing data ---
+Reason: Missing output files: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.tsv, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.pdf; Input files updated by another job: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt
+
+
+    N_SITES=$(cat ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt)
+    Rscript scripts/plot_imiss.R ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss $N_SITES ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.pdf ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.tsv 2> log/plot_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.log
+    
+Submitted job 67 with external jobid 'Submitted batch job 191973'.
+[Tue Jun  6 11:19:25 2023]
+Finished job 67.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Tue Jun  6 11:19:25 2023]
+localrule all:
+    input: saf/POPS/ALL_gal_LC_100_100_5343.GL2.saf.idx.done, saf/POPS/cucREF7_7_7_284.GL2.saf.idx.done, saf/POPS/curvirostris_8_8_82.GL2.saf.idx.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.saf.idx.done, saf/POPS/galREF9_9_9_467.GL2.saf.idx.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.saf.idx.done, saf/POPS/longREF7_7_7_317.GL2.saf.idx.done, saf/POPS/longREF9_9_9_393.GL2.saf.idx.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.saf.idx.done, saf/POPS/PEL_long_LC_17_17_480.GL2.saf.idx.done, saf/POPS/PRE_long_LC_8_8_276.GL2.saf.idx.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.1D.sfs, saf/POPS/cucREF7_7_7_284.GL2.1D.sfs, saf/POPS/curvirostris_8_8_82.GL2.1D.sfs, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.1D.sfs, saf/POPS/galREF9_9_9_467.GL2.1D.sfs, saf/POPS/hatched_gal_LC_22_22_1161.GL2.1D.sfs, saf/POPS/longREF7_7_7_317.GL2.1D.sfs, saf/POPS/longREF9_9_9_393.GL2.1D.sfs, saf/POPS/PEL_cuc_LC_8_8_215.GL2.1D.sfs, saf/POPS/PEL_long_LC_17_17_480.GL2.1D.sfs, saf/POPS/PRE_long_LC_8_8_276.GL2.1D.sfs, saf/POPS/ALL_gal_LC_100_100_5343.GL2.sfs2theta.done, saf/POPS/cucREF7_7_7_284.GL2.sfs2theta.done, saf/POPS/curvirostris_8_8_82.GL2.sfs2theta.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.sfs2theta.done, saf/POPS/galREF9_9_9_467.GL2.sfs2theta.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.sfs2theta.done, saf/POPS/longREF7_7_7_317.GL2.sfs2theta.done, saf/POPS/longREF9_9_9_393.GL2.sfs2theta.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.sfs2theta.done, saf/POPS/PEL_long_LC_17_17_480.GL2.sfs2theta.done, saf/POPS/PRE_long_LC_8_8_276.GL2.sfs2theta.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_chrom.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_chrom.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_chrom.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_chrom.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_chrom.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_chrom.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_chrom.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_chrom.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_chrom.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_chrom.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_chrom.done, saf/POPS/ALL_gal_LC_100_100_5343.GL2.theta_stats_Window10kb.done, saf/POPS/cucREF7_7_7_284.GL2.theta_stats_Window10kb.done, saf/POPS/curvirostris_8_8_82.GL2.theta_stats_Window10kb.done, saf/POPS/EGGS_gal_LC_78_78_4182.GL2.theta_stats_Window10kb.done, saf/POPS/galREF9_9_9_467.GL2.theta_stats_Window10kb.done, saf/POPS/hatched_gal_LC_22_22_1161.GL2.theta_stats_Window10kb.done, saf/POPS/longREF7_7_7_317.GL2.theta_stats_Window10kb.done, saf/POPS/longREF9_9_9_393.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_cuc_LC_8_8_215.GL2.theta_stats_Window10kb.done, saf/POPS/PEL_long_LC_17_17_480.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_8_8_276.GL2.theta_stats_Window10kb.done, saf/POPS/PRE_long_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/PRE_long_LC_vs_ALL_gal_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_long_LC_2D.sfs, saf/POPS/PEL_long_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/ALL_gal_LC_vs_PEL_cuc_LC_2D.sfs, saf/POPS/longREF9_vs_galREF9_2D.sfs, saf/POPS/longREF9_vs_cucREF7_2D.sfs, saf/POPS/longREF7_vs_galREF9_2D.sfs, saf/POPS/longREF7_vs_cucREF7_2D.sfs, saf/POPS/galREF9_vs_cucREF7_2D.sfs, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fstIndex.done, saf/POPS/2pops/longREF9_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF9_vs_cucREF7.fstIndex.done, saf/POPS/2pops/longREF7_vs_galREF9.fstIndex.done, saf/POPS/2pops/longREF7_vs_cucREF7.fstIndex.done, saf/POPS/2pops/galREF9_vs_cucREF7.fstIndex.done, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fstIndex.done, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.global.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.global.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.global.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_galREF9.fst.Window10kb.type1.tsv, saf/POPS/2pops/longREF7_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/2pops/galREF9_vs_cucREF7.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.global.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type1.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type2.tsv, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.fst.Window10kb.type3.tsv, saf/POPS/2pops/PRE_long_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/PRE_long_LC_vs_ALL_gal_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, saf/POPS/2pops/PEL_long_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/ALL_gal_LC_vs_PEL_cuc_LC.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_galREF9.A_B.tsv.gz, saf/POPS/2pops/longREF7_vs_cucREF7.A_B.tsv.gz, saf/POPS/2pops/galREF9_vs_cucREF7.A_B.tsv.gz, saf/POPS/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.A_B.tsv.gz, ngsRelate/PEL_cuc_LC.glf3.freq, ngsRelate/PEL_long_LC.glf3.freq, ngsRelate/PRE_long_LC.glf3.freq, ngsRelate/PEL_F1_LC.glf3.freq, saf/POPS/sites/ALL_gal_LC_100_100_5343.GL2.sites.saf.idx.done, saf/POPS/sites/cucREF7_7_7_284.GL2.sites.saf.idx.done, saf/POPS/sites/curvirostris_8_8_82.GL2.sites.saf.idx.done, saf/POPS/sites/EGGS_gal_LC_78_78_4182.GL2.sites.saf.idx.done, saf/POPS/sites/galREF9_9_9_467.GL2.sites.saf.idx.done, saf/POPS/sites/hatched_gal_LC_22_22_1161.GL2.sites.saf.idx.done, saf/POPS/sites/longREF7_7_7_317.GL2.sites.saf.idx.done, saf/POPS/sites/longREF9_9_9_393.GL2.sites.saf.idx.done, saf/POPS/sites/PEL_cuc_LC_8_8_215.GL2.sites.saf.idx.done, saf/POPS/sites/PEL_long_LC_17_17_480.GL2.sites.saf.idx.done, saf/POPS/sites/PRE_long_LC_8_8_276.GL2.sites.saf.idx.done, saf/POPS/sites/ALL_gal_LC_100_100_5343.GL2.sites.1D.sfs, saf/POPS/sites/cucREF7_7_7_284.GL2.sites.1D.sfs, saf/POPS/sites/curvirostris_8_8_82.GL2.sites.1D.sfs, saf/POPS/sites/EGGS_gal_LC_78_78_4182.GL2.sites.1D.sfs, saf/POPS/sites/galREF9_9_9_467.GL2.sites.1D.sfs, saf/POPS/sites/hatched_gal_LC_22_22_1161.GL2.sites.1D.sfs, saf/POPS/sites/longREF7_7_7_317.GL2.sites.1D.sfs, saf/POPS/sites/longREF9_9_9_393.GL2.sites.1D.sfs, saf/POPS/sites/PEL_cuc_LC_8_8_215.GL2.sites.1D.sfs, saf/POPS/sites/PEL_long_LC_17_17_480.GL2.sites.1D.sfs, saf/POPS/sites/PRE_long_LC_8_8_276.GL2.sites.1D.sfs, saf/POPS/sites/PRE_long_LC_vs_PEL_long_LC.sites.2D.sfs, saf/POPS/sites/PRE_long_LC_vs_PEL_cuc_LC.sites.2D.sfs, saf/POPS/sites/PRE_long_LC_vs_ALL_gal_LC.sites.2D.sfs, saf/POPS/sites/ALL_gal_LC_vs_PEL_long_LC.sites.2D.sfs, saf/POPS/sites/PEL_long_LC_vs_PEL_cuc_LC.sites.2D.sfs, saf/POPS/sites/ALL_gal_LC_vs_PEL_cuc_LC.sites.2D.sfs, saf/POPS/sites/longREF9_vs_galREF9.sites.2D.sfs, saf/POPS/sites/longREF9_vs_cucREF7.sites.2D.sfs, saf/POPS/sites/longREF7_vs_galREF9.sites.2D.sfs, saf/POPS/sites/longREF7_vs_cucREF7.sites.2D.sfs, saf/POPS/sites/galREF9_vs_cucREF7.sites.2D.sfs, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.fstIndex.done, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.fst.global.tsv, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.fst.Window10kb.type1.tsv, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.fst.Window10kb.type2.tsv, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.fst.Window10kb.type3.tsv, saf/POPS/sites/3pops/PRE_long_LC_vs_ALL_gal_LC_vs_PEL_long_LC.sites.A_B.tsv.gz, synthesis_daphnia/list/PRE_long_LC_ALL_gal_LC_PEL_long_LC.SNPs.chr, synthesis_daphnia/list/PRE_long_LC_ALL_gal_LC_PEL_long_LC.SNPs_index.done, synthesis_daphnia/mafs/df1.mafs.done, synthesis_daphnia/mafs/df2.mafs.done, synthesis_daphnia/mafs/df3.mafs.done, synthesis_daphnia/mafs/df4.mafs.done, synthesis_daphnia/mafs/df5.mafs.done, synthesis_daphnia/mafs/df6.mafs.done, synthesis_daphnia/mafs/df7.mafs.done, synthesis_daphnia/mafs/df8.mafs.done, synthesis_daphnia/mafs/df9.mafs.done, synthesis_daphnia/mafs/df10.mafs.done, synthesis_daphnia/mafs/df11.mafs.done, synthesis_daphnia/mafs/df12.mafs.done, synthesis_daphnia/mafs/df13.mafs.done, synthesis_daphnia/mafs/df14.mafs.done, synthesis_daphnia/mafs/df15.mafs.done, synthesis_daphnia/mafs/df16.mafs.done, synthesis_daphnia/mafs/df17.mafs.done, synthesis_daphnia/mafs/df18.mafs.done, ancestry/LC/data/get_bcf_angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.done, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_INFODP.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_nbrSites.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_INFODP.pdf, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_INFODP.stats.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.nbrSites.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.pdf, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.tsv
+    jobid: 0
+    reason: Input files updated by another job: ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.vcf.gz, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.nbrSites.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.nbrSites.txt, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.pdf, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imiss.tsv, ancestry/LC/data/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.vcf.gz
+    resources: mem_mb=1000, mem_mib=954, disk_mb=13717, disk_mib=13082, tmpdir=/tmp, partition=std, walltime=120:00:00
+
+[Tue Jun  6 11:19:25 2023]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2023-06-06T110653.670053.snakemake.log
