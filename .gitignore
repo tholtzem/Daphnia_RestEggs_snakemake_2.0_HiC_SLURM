@@ -2,7 +2,7 @@
 .Rhistory
 abbababa/*
 ancestry/*
-slurm/log/*.log
+slurm/log/*
 slurm/clusterSnakemake.pbs
 slurm/config.yaml
 list/*
