@@ -54,7 +54,7 @@ if os.path.isfile("list/depthFilter.list"):
   print ("Depth filter file exists")
   depth_information = pd.read_csv("list/depthFilter.list", sep='\t')
   depth_structure = depth_information[(depth_information['pops']=='LC') | (depth_information['pops']=='LZ') | (depth_information['pops']=='LCwithoutREF') | (depth_information['pops']=='LZwithoutREF')]
-  depth_saf = depth_information[(depth_information['pops']!='LC') & (depth_information['pops']!='LZ') & (depth_information['pops']!='LCwithoutREF') & (depth_information['pops']!='LZwithoutREF')]
+  depth_saf = depth_information[(depth_information['pops']!='LC') & (depth_information['pops']!='LZ') & (depth_information['pops']!='LCwithoutREF') & (depth_information['pops']!='LZwithoutREF') & (depth_information['pops']!='cucREF7')]
         
 
   # number of samples (individuals)

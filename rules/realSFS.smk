@@ -93,17 +93,17 @@ rule theta_stat_SW:
   input:
     'saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.sfs2theta.done'
   output:
-    touch('saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.theta_stats_Window10kb.done')
+    touch('saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.theta_stats_Window{bp}bp.done')
   log:
-    'log/saf_POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.theta_stats_Window10kb.log'
-  threads: 12
-  resources: mem_mb=100, walltime="00:10:00"
+    'log/saf_POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.theta_stats_Window{bp}bp.log'
+  threads: 2
+  resources: mem_mb=600, walltime="06:00:00"
   message:
     """ Estimate Tajimas D and other statistics using a sliding window analysis """
   shell:
     """
     module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
-    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/misc/thetaStat do_stat saf/POPS/{wildcards.POPS}_{wildcards.IND}_{wildcards.MinDepth}_{wildcards.MaxDepth}.GL2.thetas.idx -win 10000 -step 1000 -outnames saf/POPS/{wildcards.POPS}_{wildcards.IND}_{wildcards.MinDepth}_{wildcards.MaxDepth}.GL2.theta_stats_Window10kb 2> {log}
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/misc/thetaStat do_stat saf/POPS/{wildcards.POPS}_{wildcards.IND}_{wildcards.MinDepth}_{wildcards.MaxDepth}.GL2.thetas.idx -win {wildcards.bp} -step {wildcards.bp} -outnames saf/POPS/{wildcards.POPS}_{wildcards.IND}_{wildcards.MinDepth}_{wildcards.MaxDepth}.GL2.theta_stats_Window{wildcards.bp}bp 2> {log}
     """
 
 
