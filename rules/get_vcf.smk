@@ -166,3 +166,4 @@ rule lmiss:
     bcftools filter -e 'F_MISSING > 0.2' -Ov -o {output.vcf} {input} &&
     bcftools view -H {input} | wc -l > {output.n_sites} 2> {log}
     """
+

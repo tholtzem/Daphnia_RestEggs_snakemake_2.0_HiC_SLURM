@@ -32,18 +32,41 @@ rule get_mafs_bams_sites:
     #bamlist = 'synthesis_daphnia/list/df{df}_realignedbam.list',
     bams = '/scratch/c7701178/mach2/DAPHNIA/Daphnia_RestEggs_snakemake_pbs_2.0_HiC/realigned/{bams}.realigned.bam',
     touched = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP_index.done',
-    sites = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list',
+    sites = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP_chrom_pos.list',
     chrom = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr'
   output:
-    touch('mafs/{bams}.mafs.done')
+    touch('mafsNEW/{bams}.mafs.done')
   log:
    'log/ancestry/{bams}.mafs.log'
   threads: 2
   resources: mem_mb=5000, walltime="12:00:00"
   message:
-    """ Compute site allele frequency likelihood (.saf.idx) for each population using angsd """
+    """ Compute 'allele frequencies' for each individual in angsd using the reference allele as major """
   shell:
     """
     module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
-    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -i {input.bams} -ref {input.ref} -anc {input.ref} -out ancestry/LC/hybrids_LC/mafs/{wildcards.bams}.mafs -GL 2 -doMaf 1 -doMajorMinor 3 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -minInd 1 -sites {input.sites} -rf {input.chrom} 2> {log}
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -i {input.bams} -ref {input.ref} -out mafsNEW/{wildcards.bams} -GL 2 -doMaf 1 -doMajorMinor 4 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -sites {input.sites} -rf {input.chrom} 2> {log}
+    """
+
+
+rule get_mafs_DW:
+  input:
+    ref = config["ref_HiC"],
+    bamlist = 'mafsNEW/list/DW_{N}_bam.list',
+    touched = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP_index.done',
+    sites = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP_chrom_pos.list',
+    #sites = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.list',
+    chrom = 'list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_globalSNP.chr'
+  output:
+    touch('mafsNEW/DW/DW_{N}.mafs.done')
+  log:
+   'log/mafsNEW/DW_{N}.mafs.log'
+  threads: 1
+  resources: mem_mb=10000, walltime="24:00:00"
+  message:
+    """ Compute allele frequencies for discrete windows in angsd using the reference allele as major """
+  shell:
+    """
+    module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -b {input.bamlist} -ref {input.ref} -out mafsNEW/DW/DW_{wildcards.N} -GL 2 -doMaf 1 -doMajorMinor 4 -uniqueOnly 1 -remove_bads 1 -only_proper_pairs 1 -trim 0 -C 50 -minQ 20 -minMapQ 30 -sites {input.sites} -rf {input.chrom} 2> {log}
     """
