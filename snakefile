@@ -106,16 +106,29 @@ rule all:
 		#expand('synthesis_daphnia/list/PRE_long_LC_ALL_gal_LC_PEL_long_LC.SNPs_index.done'),
 		#expand('synthesis_daphnia/mafs/{bams}.mafs.done', bams=bams),
 		#expand('synthesis_daphnia/mafs/df{df}.mafs.done', df=range(1,19)),
-		#expand('ancestry/LC/data/get_bcf_{prefix}.done', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051']),
-		#expand('ancestry/LC/data/{prefix}.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['vcf.gz']),
-		#expand('ancestry/LC/data/{prefix}_{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['INFODP.txt', 'nbrSites.txt']),
-		#expand('ancestry/LC/data/{prefix}_{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['INFODP.pdf', 'INFODP.stats.txt']),
-		#expand('ancestry/LC/data/{prefix}_hf.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['vcf.gz', 'nbrSites.txt']),
-		#expand('ancestry/LC/data/{prefix}_hf.DP{genoDP}.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf.gz', 'nbrSites.txt']),
-		#expand('ancestry/LC/data/{prefix}_hf.DP{genoDP}.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['imiss']),
-		#expand('ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['pdf', 'tsv']),
-		#expand('ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf.gz']),
-		#expand('ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.vmiss20.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf', 'nbrSites.txt']),
+		expand('ancestry/LC/data/get_bcf_{prefix}_MajorMinor4.done', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['vcf.gz']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['INFODP.txt', 'nbrSites.txt']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['INFODP.pdf', 'INFODP.stats.txt']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_hf.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], ext=['vcf.gz', 'nbrSites.txt']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf.gz', 'nbrSites.txt']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['imiss']),
+		expand('ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['pdf', 'tsv']),
+		expand('ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf.gz']),
+		expand('ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.{ext}', prefix=['angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051'], genoDP=['10'], ext=['vcf', 'nbrSites.txt']),
+		#expand('ancestry/LC/new/{pop1}_{pop2}.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], ext=['fixed_sites.txt', 'fixed_sites.report.tsv']),
+		#expand('ancestry/LC/new/{pop1}_{pop2}.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], ext=['fixed_sites_100percent_thinned1000bp.svg', 'fixed_sites_100percent_thinned1000bp.report.tsv']),
+		expand('ancestry/LC/overall/{pop1}_{pop2}.fixed_sites_{pct}percent.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], pct=['70'], ext=['txt', 'report.tsv']),
+		expand('ancestry/LC/overall/{pop1}_{pop2}.fixed_sites_{pct}percent_thinned1000bp.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], pct=['70'], ext=['svg', 'report.tsv']),
+		expand('ancestry/LC/overall/{pop1}_{pop2}.fixed_sites_{pct}percent_{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], pct=['70'], ext=['SNP.tsv']),
+		#expand('ancestry/LC/data/imissRM/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_MajorMinor4_hf.DP10.imissRM.vmiss20_{ext}', ext=['ancestrySites.vcf.gz']),
+		#expand('ancestry/LC/data/imissRM/DW_{DW}_ancestrySites_MajorMinor4.{ext}', DW=range(1,19), ext=['vcf.gz']),
+		#expand('ancestry/LC/data/imissRM/DW_{DW}_ancestrySites_MajorMinor4_new.{ext}', DW=range(1,19), ext=['vcf.gz']),
+		#expand('ancestry/LC/data/imissRM/DW_{DW}_AF_MajorMinor4.{ext}', DW=range(1,19), ext=['tsv']),
+		#expand('list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_MajorMinor4_hf.DP10.imissRM.vmiss20_ancestrySites.{ext}', ext=['tsv']),
+		#expand('list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_MajorMinor4_hf.DP10.imissRM.vmiss20_ancestrySites.{ext}', ext=['chr']),
+		#expand('list/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_MajorMinor4_hf.DP10.imissRM.vmiss20_ancestrySites.index.done'),
+		#expand('mafsNEW/DW/DW_{N}.mafs.done', N=range(1,19)),
 		#expand('saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.saf.idx.done', zip, POPS=['cucREF6'], IND=['6'], MinDepth=['6'], MaxDepth=['284']),
 		#expand('saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.1D.sfs', zip, POPS=['cucREF6'], IND=['6'], MinDepth=['6'], MaxDepth=['284']),
 		#expand('saf/POPS/{POPS}_{IND}_{MinDepth}_{MaxDepth}.GL2.sfs2theta.done', zip, POPS=['cucREF6'], IND=['6'], MinDepth=['6'], MaxDepth=['284']),
@@ -139,16 +152,9 @@ rule all:
 		#expand('ancestry/LC/data/imissRM/{prefix}/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imissRM.vmiss20_{prefix}_selected_samples.vcf', prefix=['longispina7_galeata9.fixed_sites', 'longispina7_galeata9.fixed_sites_100completeness', 'longispina7_galeata9.fixed_sites_100completeness_1000bp']),
 		#expand('TAFT/taft/test.done'),
 		#expand('newhybrids/sim/two_BX/{sites}sites/N_IND{N_IND}/test_{sites}sites_N_IND{N_IND}.done', sites=['1000'], N_IND=['25']),
-		expand('mafsNEW/{bams}.mafs.done', bams=bams),
-		expand('mafsNEW/DW/DW_{N}.mafs.done', N=range(1,19)),
-		expand('ancestry/LC/all/{pop1}_{pop2}.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], ext=['fixed_sites.txt', 'fixed_sites.report.tsv']),
-		expand('ancestry/LC/all/{pop1}_{pop2}.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], ext=['fixed_sites_100percent_thinned1000bp.svg', 'fixed_sites_100percent_thinned1000bp.report.tsv']),
-		expand('ancestry/LC/all/{pop1}_{pop2}.{ext}', pop1=['LONGoverall'], pop2=['GALoverall'], ext=['fixed_sites_SNP.tsv']),
-		expand('ancestry/LC/data/imissRM/angsd_GL2_minInd202_maf0.05_minDepth202_maxDepth9051_hf.DP10.imissRM.vmiss20_{ext}', ext=['ancestrySites.vcf.gz']),
-		expand('ancestry/LC/data/imissRM/DW_{DW}_ancestrySites.{ext}', DW=range(1,19), ext=['vcf.gz']),
-		expand('ancestry/LC/data/imissRM/DW_{DW}_ancestrySites_new.{ext}', DW=range(1,19), ext=['vcf.gz']),
-		expand('ancestry/LC/data/imissRM/DW_{DW}_AF.{ext}', DW=range(1,19), ext=['tsv'])
-		
+		#expand('mafsNEW/{bams}.mafs.done', bams=bams),
+		#expand('mafsNEW/DW_sites2/DW_{N}.mafs.done', N=range(1,19)),
+		#expand('mafsNEW/DW_sites3/DW_{N}.mafs.done', N=range(1,19))
 		
 
 
@@ -166,10 +172,10 @@ rule all:
 #include: "rules/get_allelefreq_perpop.smk"
 #include: "rules/ngsRelate.smk"
 #include: "rules/realSFS_Fst_sites.smk"
-include: "rules/get_allelefreq_perpop_sites.smk"
 #include: "rules/abbababa2.smk"
-#include: "rules/get_vcf.smk"
+include: "rules/get_vcf.smk"
 include: "rules/ancestry.smk"
+#include: "rules/get_allelefreq_perpop_sites.smk"
 #include: "rules/ancestry_PCA.smk"
 #include: "rules/taft.smk"
 #include: "rules/newhybrids.smk"
