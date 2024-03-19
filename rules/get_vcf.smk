@@ -5,29 +5,29 @@ rule get_bcf:
     ref = config["ref_HiC"],
     #bamlist = 'list/ancestry/parents_hybrids_LC_realignedBAM.list',
     bamlist = 'list/LC_realignedBAM_df1.list',
-    sites = 'list/{prefix}_globalSNP.list',
+    sites = 'list/{prefix}_globalSNP_chrom_pos.list',
     chroms = 'list/{prefix}_globalSNP.chr'
   output:
-    touch('ancestry/LC/data/get_bcf_{prefix}.done')
-  log: 'log/LC/get_bcf_{prefix}.log'
+    touch('ancestry/LC/data/get_bcf_{prefix}_MajorMinor4.done')
+  log: 'log/LC/get_bcf_{prefix}_MajorMinor4.log'
   threads: 2
   resources: mem_mb=240000, walltime="24:00:00"
   message:
-    """ Call genotypes from realigned bam files using estimated allele frequencies from genotype likelihoods as a prior and output in bcf format """
+    """ Call genotypes from realigned bam files using SNPs generated from genotype likelihoods as a prior, setting the REF allele as major and output in bcf format """
   shell:
     """
     module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
-    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -b {input.bamlist} -ref {input.ref} -out ancestry/LC/data/{wildcards.prefix} -GL 2 -doPost 1 -doMajorMinor 3 -doMaf 1 -doBcf 1 --ignore-RG 0 -doGeno 1 -doCounts 1 -geno_minDepth 10 -sites {input.sites} -rf {input.chroms} 2> {log}
+    singularity exec --home $PWD:$HOME /scratch/c7701178/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd -b {input.bamlist} -ref {input.ref} -out ancestry/LC/data/{wildcards.prefix} -GL 2 -doPost 1 -doMajorMinor 4 -doMaf 1 -doBcf 1 --ignore-RG 0 -doGeno 1 -doCounts 1 -geno_minDepth 10 -sites {input.sites} -rf {input.chroms} -doSNPstat 1 -doHWE 1 -sb_pval 0.05 -qscore_pval 0.05 -edge_pval 0.05 -mapq_pval 0.05 2> {log}
     """
 
 
 rule bcf2vcf:
   input:
-    'ancestry/LC/data/get_bcf_{prefix}.done'
+    'ancestry/LC/data/get_bcf_{prefix}_MajorMinor4.done'
   output:
-    'ancestry/LC/data/{prefix}.vcf.gz'
+    'ancestry/LC/data/{prefix}_MajorMinor4.vcf.gz'
   log:
-    'log/LC/{prefix}_BCF2VCF.log'
+    'log/LC/{prefix}_BCF2VCF_MajorMinor4.log'
   message: """ --- Convert bcf 2 uncompressed vcf for downstream analysis --- """
   threads: 2
   resources: mem_mb=200, walltime="00:05:00"
@@ -40,11 +40,11 @@ rule bcf2vcf:
 
 rule stats_DP_vcf:
   input:
-    vcf = 'ancestry/LC/data/{prefix}.vcf.gz'
+    vcf = 'ancestry/LC/data/{prefix}_MajorMinor4.vcf.gz'
   output:
-    INFO_DP = 'ancestry/LC/data/{prefix}_INFODP.txt',
-    n_sites = 'ancestry/LC/data/{prefix}_nbrSites.txt'
-  log: 'log/{prefix}_statsVCF.log'
+    INFO_DP = 'ancestry/LC/data/{prefix}_MajorMinor4_INFODP.txt',
+    n_sites = 'ancestry/LC/data/{prefix}_MajorMinor4_nbrSites.txt'
+  log: 'log/{prefix}_MajorMinor4_statsVCF.log'
   threads: 2
   resources: mem_mb=200, walltime="00:05:00"
   message: """ Count sites of raw vcf and for each site print DP values """
@@ -57,11 +57,11 @@ rule stats_DP_vcf:
 
 rule plot_INFODP:
   input:
-    args1 = 'ancestry/LC/data/{prefix}_INFODP.txt',
+    args1 = 'ancestry/LC/data/{prefix}_MajorMinor4_INFODP.txt',
   output:
-    args2 = 'ancestry/LC/data/{prefix}_INFODP.pdf',
-    args3 = 'ancestry/LC/data/{prefix}_INFODP.stats.txt'
-  log: 'log/{prefix}_plot_INFODP.log'
+    args2 = 'ancestry/LC/data/{prefix}_MajorMinor4_INFODP.pdf',
+    args3 = 'ancestry/LC/data/{prefix}_MajorMinor4_INFODP.stats.txt'
+  log: 'log/{prefix}_MajorMinor4._plot_INFODP.log'
   threads: 2
   resources: mem_mb=200, walltime="00:01:00"
   message: """ Plot INFO/DP values """
@@ -73,11 +73,11 @@ rule plot_INFODP:
 
 rule hardfilter_vcf:
   input:
-    stats = 'ancestry/LC/data/{prefix}_INFODP.stats.txt',
-    vcf = 'ancestry/LC/data/{prefix}.vcf.gz'
+    stats = 'ancestry/LC/data/{prefix}_MajorMinor4_INFODP.stats.txt',
+    vcf = 'ancestry/LC/data/{prefix}_MajorMinor4.vcf.gz'
   output:
-    vcf = 'ancestry/LC/data/{prefix}_hf.vcf.gz',
-    n_sites = 'ancestry/LC/data/{prefix}_hf.nbrSites.txt'
+    vcf = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.vcf.gz',
+    n_sites = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.nbrSites.txt'
   log: 'log/{prefix}_hf.log'
   threads: 2
   resources: mem_mb=150, walltime="00:10::00"
@@ -91,11 +91,11 @@ rule hardfilter_vcf:
 
 rule filter_genotype_DP:
   input:
-    'ancestry/LC/data/{prefix}_hf.vcf.gz'
+    'ancestry/LC/data/{prefix}_MajorMinor4_hf.vcf.gz'
   output:
-    vcf = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.vcf.gz',
-    n_sites = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.nbrSites.txt'
-  log: 'log/{prefix}_hf.DP{genoDP}.log'
+    vcf = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.vcf.gz',
+    n_sites = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.nbrSites.txt'
+  log: 'log/{prefix}_MajorMinor4_hf.DP{genoDP}.log'
   threads: 2
   resources: mem_mb=150, walltime="00:10:00"
   message: """ --- Filter VCF for individual genotypes for read depth --- """
@@ -108,10 +108,10 @@ rule filter_genotype_DP:
 
 rule imiss:
   input:
-    'ancestry/LC/data/{prefix}_hf.DP{genoDP}.vcf.gz'
+    'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.vcf.gz'
   output:
-    'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss'
-  log: 'log/{prefix}_hf.DP{genoDP}.imiss.log'
+    'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss'
+  log: 'log/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss.log'
   threads: 2
   resources: mem_mb=150, walltime="00:05:00"
   message: """ --- Identify individuals with a high amount of missing data --- """
@@ -123,12 +123,12 @@ rule imiss:
 
 rule plot_imiss:
   input:
-    imiss = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss',
-    n_sites = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.nbrSites.txt'
+    imiss = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss',
+    n_sites = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.nbrSites.txt'
   output:
-    pdf = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss.pdf',
-    tsv = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss.tsv'
-  log: 'log/plot_{prefix}_hf.DP{genoDP}.imiss.log'
+    pdf = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss.pdf',
+    tsv = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.imiss.tsv'
+  log: 'log/plot_{prefix}_MajorMinor4_hf.DP{genoDP}.imiss.log'
   threads: 2
   resources: mem_mb=50, walltime="00:05:00"
   message: """--- Identify individuals with a high amount of missing data ---"""
@@ -140,12 +140,12 @@ rule plot_imiss:
 
 rule remove_imiss:
   input:
-    vcf = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.vcf.gz',
+    vcf = 'ancestry/LC/data/{prefix}_MajorMinor4_hf.DP{genoDP}.vcf.gz',
     #imiss = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss',
     #tsv = 'ancestry/LC/data/{prefix}_hf.DP{genoDP}.imiss.tsv'
   output:
-    vcf = 'ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.vcf.gz'
-  log: 'log/{prefix}_hf.DP{genoDP}.imissRM.log'
+    vcf = 'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vcf.gz'
+  log: 'log/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.log'
   message: """ Remove individual with high missingness from data set """
   shell:
     """
@@ -155,11 +155,11 @@ rule remove_imiss:
 
 rule lmiss:
   input:
-    'ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.vcf.gz'
+    'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vcf.gz'
   output:
-    vcf = 'ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.vmiss20.vcf',
-    n_sites = 'ancestry/LC/data/imissRM/{prefix}_hf.DP{genoDP}.imissRM.vmiss20.nbrSites.txt'
-  log: 'log/{prefix}_hf.DP{genoDP}.imissRM.vmiss20.log'
+    vcf = 'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.vcf',
+    n_sites = 'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.nbrSites.txt'
+  log: 'log/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.log'
   message: """ Remove sites with more than 20 % missingness, output uncompressed vcf for downstream analysis """
   shell:
     """
@@ -167,3 +167,15 @@ rule lmiss:
     bcftools view -H {input} | wc -l > {output.n_sites} 2> {log}
     """
 
+
+rule bed:
+  input:
+    vcf = 'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.vcf'
+  output:
+    bed = 'ancestry/LC/data/imissRM/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.bed'
+  log: 'log/{prefix}_MajorMinor4_hf.DP{genoDP}.imissRM.vmiss20.bed.log'
+  message: """ Convert VCF to BED format """
+  shell:
+    """
+    bcftools query -f'%CHROM\t%POS0\t%END\t%DP\n' {input.vcf} > {output.bed} 2> {log}
+    """
