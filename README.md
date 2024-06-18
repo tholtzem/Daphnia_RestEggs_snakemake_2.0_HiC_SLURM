@@ -5,42 +5,68 @@ This is the continued version of the snakemake workflow [Daphnia_RestEggs_snakem
 
 ======================================================
 
+## Some softwares required manual installation using a singularity image
+
+* angsd (angsd+ngsrelate.sif)
+* ngsRelate (angsd+ngsrelate.sif)
+* ngsLD (available in ngs+tools.sif)
+* pcangsd (available in ngs+tools.sif)
+
+To copy image to your repository
+
+```
+rsync -avP /scratch/c770xxxx/bio/angsd+ngsrelate.sif $SCRATCH/
+rsync -avP /scratch/c770xxxx/bio/ngs+tools.sif $SCRATCH/
+
+```
+
+To execute image in snakemake rule
+
+```
+module load singularity/3.8.7-python-3.10.8-gcc-8.5.0-e6f6onc
+#angsd v0.939 (used here)
+singularity exec --home $PWD:$HOME $SCRATCH/bio/angsd+ngsrelate.sif /opt/angsd-0.939/angsd
+#angsd v0.940
+singularity exec --home $PWD:$HOME $SCRATCH/bio/angsd+ngsrelate.sif /opt/angsd/angsd
+singularity exec --home $PWD:$HOME $SCRATCH/bio/ngs+tools.sif pcangsd
+singularity exec --home $PWD:$HOME $SCRATCH/bio/ngs+tools.sif /opt/ngsTools/ngsLD/ngsLD
+```
+
 ## Anaconda and Mamba
 
 
 Mamba (https://github.com/mamba-org/mamba) is a reimplementation of the conda package manager in C++.
 
 ```
-# Load Anaconda on cluster (here mach2):
-module load Anaconda3-2022.01/miniconda-base-2022.01
+# Load Anaconda on cluster (here leo5):
+module load Anaconda3/2023.10/miniconda-base-2023.10
+ 
 
 # To use conda commands in your current shell session, first do:
 eval "$(/$UIBK_CONDA_DIR/bin/conda shell.bash hook)"
 
-# !!! NOT required for c770 group !!! 
+# Users of the c770 group can simply activate the environment on leo5 with:
+conda activate daphnia
+
+# !!! In case you want to change the environment or create your own !!! 
 ## Create environment from yaml file (in envs/):
 mamba env create -f envs/s21.yaml -p $SCRATCH/envs/daphnia
 conda config --append envs_dirs $SCRATCH/envs
 
-# Users of the c770 group can simply activate the environment on leo5 with:
-conda activate daphnia
-
 # Software can be installed/updated by modifying the envs/s21.yaml file.
-
 # To use the modified conda environment, update with:
 mamba env update --name daphnia --file envs/s21.yaml
 
 ```
 
-## Get the snakemake pipeline for the slurm based cluster (here leo5)
+## Users of the c770 group can get a simple version of the snakemake pipeline for the slurm based cluster (here leo5)
 
 ```
 mkdir <some_directory>
 cd <some_directory>
-rsync -avP /scratch/c7701178/snakemake/* ./
+rsync -avP /scratch/c770xxxx/snakemake ./
 
 ```
-
 
 ## Some information on the snakemake pipeline for the slurm based cluster (here leo5)
 
@@ -83,12 +109,26 @@ sbatch slurm/clusterSnakemake.sh
 
 ```
 
-## Check jobs
+## Check/cancel jobs
 
 ```
-# all jobs
+# check all jobs
 sq
-# your jobs only
-squ
-```
 
+# check your jobs only
+squ
+
+# cancel job
+scancel <JOBID>
+
+# check usage of running job
+## ssh to node (NODELIST)
+ssh <NODELIST>
+## on the compute node
+top
+
+# check usage after the job has completed
+export SACCT_FORMAT="JobID%20,JobName,User,Partition,NodeList,Elapsed,State,ExitCode,MaxRSS,AllocTRES%32"
+sacct -j <JOBID>
+
+```
